@@ -22,6 +22,7 @@
   "Send": "Send",
   "changelang": "Change Language",
   "portfolio" : "Portfolio",
+  "resume" : "Experience",
   "contactme": {
     "title": "Want to get in touch?",
     "label": "Your message",
@@ -108,5 +109,16 @@
     "closemodal" : "close modal",
     "viewproject": "viewproject",
     "gotomy": "go to my"
+  },
+  "courses": {
+    "nav": "Courses",
+    "header": "Completed Courses",
+    "sub_header": "Continuous learning",
+    "empty": "Coming soon...",
+    "certificate": "View certificate",
+    "skills_learned": "Skills learned",
+    "year": "Year",
+    "platform": "Platform",
+    "seo_description": "Courses and certifications completed by Fernando Barajas throughout his continuous learning journey."
   }
 }

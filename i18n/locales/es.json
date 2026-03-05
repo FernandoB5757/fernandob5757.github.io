@@ -22,6 +22,7 @@
     "Send": "Enviar",
     "changelang": "Cambiar idioma",
     "portfolio" : "Portafolio",
+    "resume" : "Experiencia",
     "contactme":{
       "title": "¿Quieres conocerme?",
       "label": "Tu mensaje",
@@ -118,5 +119,16 @@
       "closemodal" : "cerrar modal",
       "viewproject": "ver proyecto",
       "gotomy": "ir a mi"
+    },
+    "courses": {
+      "nav": "Cursos",
+      "header": "Cursos Finalizados",
+      "sub_header": "Aprendizaje continuo",
+      "empty": "Próximamente...",
+      "certificate": "Ver certificado",
+      "skills_learned": "Habilidades aprendidas",
+      "year": "Año",
+      "platform": "Plataforma",
+      "seo_description": "Cursos y certificaciones completados por Fernando Barajas en su trayectoria de aprendizaje continuo."
     }
 }

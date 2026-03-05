@@ -1,6 +1,7 @@
 export * from './orbit'
 export * from './project'
 export * from './technology'
+export * from './course'
 
 export interface Theme {
     key: string
