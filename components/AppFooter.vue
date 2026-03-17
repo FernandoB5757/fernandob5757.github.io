@@ -3,7 +3,7 @@
         <div class="container flex flex-col mx-auto">
             <div class="flex flex-col items-center w-full my-20">
                 <span class="mb-8 text-primary text-3xl font-semibold">
-                    JFGB
+                    JFBG
                 </span>
                 <div class="flex flex-col items-center gap-6 mb-8">
                     <!-- <div
@@ -25,12 +25,16 @@
                         </a> -->
                         <a href="https://github.com/FernandoB5757" 
                             class="text-grey-700 hover:text-grey-900"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             :aria-label="$t('accessibility.gotomy') + ' github'"
                         >
                             <Icon name="fa6-brands:github"></Icon>
                         </a>
                         <a href="https://www.linkedin.com/in/jes%C3%BAs-fernando-barajas-galindo-965149285/"    
                             class="text-grey-700 hover:text-grey-900"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             :aria-label="$t('accessibility.gotomy') + ' linkedin'"
                         >
                             <Icon name="fa6-brands:linkedin-in"></Icon>

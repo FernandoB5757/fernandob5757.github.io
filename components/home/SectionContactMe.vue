@@ -2,10 +2,8 @@
     <div class="background-container">
         <div class="background-component">
             <AnimationsInteractiveGridPattern
-                :class="'[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]'"
-                :squares="[80, 80]"
-                squares-class-name="bg:hover:fill-primary-100 hover:fill-primary-500"
-            />
+                :class="'[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]'" :squares="[80, 80]"
+                squares-class-name="bg:hover:fill-primary-100 hover:fill-primary-500" />
         </div>
 
         <div class="content-layer">
@@ -18,13 +16,9 @@
                     <label for="message">{{ $t('contactme.label') }}:</label>
                 </FloatLabel>
                 <div class="w-full flex justify-end mt-2">
-                    <Button type="button" 
-                        :href="mailto"
-                        role="button"
-                        :aria-label="$t('accessibility.submitform')"
-                        class="text-primary-100 dark:text-white"
-                    >
-                    {{ $t('Send') }} 
+                    <Button type="button" :href="mailto" role="button" :aria-label="$t('accessibility.submitform')"
+                        class="text-primary-100 dark:text-white">
+                        {{ $t('Send') }}
                     </Button>
                 </div>
             </div>
@@ -38,11 +32,11 @@ const { t } = useI18n()
 const body = ref(t('contactme.content'))
 
 const mailto = computed(() => {
-  const mailto = 'mailto'
-  const email = 'jesusfernandobarajasgalindo@gmail.com'
-  const subject = t('contactme.emailsubject')
+    const mailto = 'mailto'
+    const email = 'me@fernandobg.com'
+    const subject = t('contactme.emailsubject')
 
-  return `${mailto}:${email}?` + encodeURI(`subject=${subject}&body=${body.value}`)
+    return `${mailto}:${email}?` + encodeURI(`subject=${subject}&body=${body.value}`)
 })
 
 </script>
@@ -57,6 +51,6 @@ const mailto = computed(() => {
 }
 
 .content-layer {
-    @apply absolute z-10 top-32 md:top-28 xl:top-32 left-5 sm:left-28 lg:left-1/4 px-5 sm:px-0 ;
+    @apply absolute z-10 top-32 md:top-28 xl:top-32 left-5 sm:left-28 lg:left-1/4 px-5 sm:px-0;
 }
 </style>

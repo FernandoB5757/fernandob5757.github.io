@@ -7,6 +7,8 @@
   "login": "Login",
   "register": "Register",
   "openmenu": "Open Menu",
+  "findme": "Find me",
+  "bestskills": "Best Skills on",
   "homewelcome": "Welcome to my world",
   "Software Engineer": "Software Engineer",
   "PHP Developer": "PHP Developer",
@@ -99,7 +101,8 @@
       "3": "Code is like humor. When you have to explain it, it’s bad.\n– Cory House"
   },
   "seo": {
-    "description": "JFBG - This is my personal portfolio, where you can get to know me better in a professional and work environment. I share who I am, my experience as a developer, and my focus on building clean and scalable solutions."
+    "description": "Fernando Barajas - Software Engineer & Full Stack Web Developer. Professional portfolio showcasing projects built with Laravel, Vue.js, Nuxt, PHP and TypeScript. Specialized in scalable web solutions and e-commerce.",
+    "keywords": "Fernando Barajas, software engineer, web developer, full stack developer, Laravel, PHP, Vue.js, Nuxt, TypeScript, JavaScript, portfolio, Guadalajara, Mexico, web development, e-commerce"
   },
   "accessibility": {
     "gotohome" : "go to Home",

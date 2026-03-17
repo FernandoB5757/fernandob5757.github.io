@@ -10,7 +10,7 @@ export const socialLinks: Ref<SocialRef[]> = ref([
     },
     {
         icon:"ic:baseline-mail-outline",
-        link: "mailto:jesusfernandobarajasgalindo@gmail.com",
+        link: "mailto:me@fernandobg.com",
         ariaLabel : "Gmail",
     },
     {
