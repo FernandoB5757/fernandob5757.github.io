@@ -11,23 +11,22 @@
                         </div>
                         <Image src="/images/me-xl.webp"  :pt:preview-mask:class="'lw-full bg-transparent'">
                             <template #image>
-                                <NuxtPicture src="/images/me-md.webp" 
+                                <NuxtImg src="/images/me-md.webp" 
                                     preload
-                                    :img-attrs="{
-                                        alt: 'Fernando Barajas', 
-                                        width: 96, 
-                                        height: 80, 
-                                        class: 'rounded w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 '}" 
+                                    format="webp"
+                                    width="400"
+                                    height="400"
+                                    alt="Fernando Barajas" 
+                                    class="rounded w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96"
                                 />
                             </template>
                             <template #original="slotProps">
-                                <NuxtPicture src="/images/me-xl.webp" 
-                                    :img-attrs="{
-                                        alt: 'Fernando Barajas', 
-                                        style: slotProps.style, 
-                                        width: 512, 
-                                        height: 512, 
-                                        loading: 'lazy'}" 
+                                <NuxtImg src="/images/me-xl.webp" 
+                                    format="webp"
+                                    width="800"
+                                    height="800"
+                                    alt="Fernando Barajas" 
+                                    loading="lazy"
                                 />
                             </template>
                         </Image>

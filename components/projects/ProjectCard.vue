@@ -2,15 +2,14 @@
   <article>
     <div class="project-card group">
         <div class="project-picture">
-          <NuxtPicture
+          <NuxtImg
             :src="project.thumbnail"
-            :imgAttrs="{
-              alt : project.image.alt,
-              width : project.image.width || 400,
-              height : project.image.height || 300,
-              class : 'group-hover:scale-110 transition ease-in-out delay-150 duration-300 rounded-lg',
-              loading : 'lazy',
-            }"
+            format="webp"
+            :width="project.image.width || 400"
+            :height="project.image.height || 300"
+            :alt="project.image.alt"
+            class="group-hover:scale-110 transition ease-in-out delay-150 duration-300 rounded-lg"
+            loading="lazy"
             @click="isOpen = true"
           />
         </div>

@@ -86,7 +86,7 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'es',
     strategy: 'prefix_except_default',
-    baseUrl: process.env.APP_URL || 'http://fernandobg.com',
+    baseUrl: process.env.APP_URL || 'https://fernandobg.com',
     bundle: {
       optimizeTranslationDirective: false,
     },
@@ -95,7 +95,9 @@ export default defineNuxtConfig({
 
   },
   image: {
-    format: ['webp']
+    format: ['webp'],
+    provider: 'ipx',
+    isLocal: false,
   },
   runtimeConfig: {
     serverToken: process.env.SERVER_TOKEN,
@@ -106,6 +108,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
+      failOnError: false,
       routes: [
         '/_ipx/w_320&f_webp/images/me-md.webp',
         '/_ipx/w_640&f_webp/images/me-md.webp',

@@ -23,7 +23,6 @@
 </template>
 <script setup lang="ts">
 const { t, locale } = useI18n()
-const img = useImage()
 const config = useRuntimeConfig()
 const baseUrl = config.public.appUrl || 'https://fernandobg.com'
 
