@@ -35,7 +35,7 @@ export const projects: Project[] = [
     id: 'ekar',
     image: {
       src: '/images/projects/ekar.webp',
-      alt: 'landing page mimo',
+      alt: 'landing page ekar de gas',
       width: 1200,
       height: 630
     },
@@ -63,10 +63,11 @@ export const projects: Project[] = [
     id: 'tubin',
     image: {
       src: '/images/projects/tubin.webp',
-      alt: 'landing page mimo',
+      alt: 'landing page tubin ecommerce',
       width: 1200,
       height: 630
     },
+    url: 'https://www.tubin.com.mx',
     technologies: [
         'laravel',
         'php',
@@ -89,7 +90,7 @@ export const projects: Project[] = [
     id: 'solarudg',
     image: {
       src: '/images/projects/solarudg.webp',
-      alt: 'landing page mimo',
+      alt: 'panel administrativo solar udg',
       width: 1200,
       height: 630
     },

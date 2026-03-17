@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/fonts',
     '@nuxt/image',
+    '@nuxtjs/sitemap',
   ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -73,6 +74,10 @@ export default defineNuxtConfig({
       ripple: true,
     },
   },
+  site: {
+    url: process.env.APP_URL || 'https://fernandobg.com',
+    name: 'Fernando Barajas | Software Engineer Portfolio',
+  },
   i18n: {
     vueI18n: './i18n.config.ts',
     locales: [
@@ -80,6 +85,8 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-US', file: 'en.json' }
     ],
     defaultLocale: 'es',
+    strategy: 'prefix_except_default',
+    baseUrl: process.env.APP_URL || 'http://fernandobg.com',
     bundle: {
       optimizeTranslationDirective: false,
     },
@@ -93,7 +100,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     serverToken: process.env.SERVER_TOKEN,
     public: {
-      apiBase: process.env.API_URL
+      apiBase: process.env.API_URL,
+      appUrl: process.env.APP_URL || 'https://fernandobg.com',
     }
   },
   nitro: {
@@ -111,7 +119,7 @@ export default defineNuxtConfig({
 
         '/_ipx/f_webp&s_64x64/images/me-sm.webp',
         '/_ipx/f_webp&s_128x128/images/me-sm.webp',
-        
+
         '/_ipx/f_webp&s_128x128/images/me-sm.webp',
 
         '/_ipx/w_320&f_webp/images/me-md.webp',

@@ -7,6 +7,8 @@
     "login": "Iniciar sesión",
     "register": "Registrarse",
     "openmenu": "Abrir menú",
+    "findme": "Encuéntrame",
+    "bestskills": "Mejores habilidades",
     "homewelcome": "Bienvenido a mi mundo",
     "Software Engineer": "Ingeniero de Software",
     "PHP Developer": "Desarrollador PHP",
@@ -109,7 +111,8 @@
       "3": "El código es como el humor. Cuando tienes que explicarlo, es malo.\n– Cory House"
     },
     "seo": {
-      "description": "JFBG - Mi portafolio personal, donde podrás conocerme más a profundidad en el ámbito laboral y profesional. Aquí comparto quién soy, mi experiencia como desarrollador, y mi enfoque en la creación de soluciones limpias y escalables."
+      "description": "Fernando Barajas - Ingeniero de Software y Desarrollador Web Full Stack. Portafolio profesional con proyectos en Laravel, Vue.js, Nuxt, PHP y TypeScript. Especializado en soluciones web escalables y e-commerce.",
+      "keywords": "Fernando Barajas, ingeniero de software, desarrollador web, full stack developer, Laravel, PHP, Vue.js, Nuxt, TypeScript, JavaScript, portafolio, Guadalajara, México, desarrollo web, e-commerce"
     },
     "accessibility": {
       "gotohome" : "ir al inicio",

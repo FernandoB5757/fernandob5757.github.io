@@ -70,7 +70,7 @@
                         <div class="flex flex-row items-center gap-x-3 sm:gap-x-0">
                             <div class="w-1/2">
                                 <span class="text-sm tracking-wide uppercase">
-                                    Find Witth me 
+                                    {{ $t('findme') }}
                                 </span> 
                                 <div class="flex flex-row gap-1 sm:gap-3 uppercase">
                                     <LazyAnimationsCardSpotlight
@@ -97,7 +97,7 @@
                             </div>
                             <div class="w-1/2">
                                 <span class="text-sm tracking-wide uppercase">
-                                    Best Skills on
+                                    {{ $t('bestskills') }}
                                 </span>
                                 <div class="flex flex-row gap-1 sm:gap-3">
                                     <LazyAnimationsCardSpotlight
