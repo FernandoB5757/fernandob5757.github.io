@@ -1,10 +1,11 @@
 import type { Config } from 'tailwindcss'
 import animate from "tailwindcss-animate"
 import { setupInspiraUI } from "@inspira-ui/plugins"
+import tailwindcssPrimeui from 'tailwindcss-primeui'
 
 export default <Partial<Config>>{
   darkMode: ['selector', '.dark-mode'],
-  plugins: [require('tailwindcss-primeui'),animate,setupInspiraUI],
+  plugins: [tailwindcssPrimeui, animate, setupInspiraUI],
   content: [
     "./app/components/**/*.{js,vue,ts}",
     "./app/pages/**/*.{js,vue,ts}",
