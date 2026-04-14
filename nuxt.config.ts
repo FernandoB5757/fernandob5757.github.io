@@ -1,6 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import Theme from "./themes/default"
-
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -14,7 +12,6 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxtjs/tailwindcss',
-    '@primevue/nuxt-module',
     '@nuxtjs/color-mode',
     '@nuxt/icon',
     '@nuxtjs/i18n',
@@ -28,50 +25,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         class: 'scroll-smooth',
       },
-    },
-  },
-  primevue: {
-    autoImport: false,
-    components: {
-      include: [
-        'Button',
-        'Avatar',
-        'Textarea',
-        'Tag',
-        'Image',
-        'Floatlabel',
-        'Drawer',
-        'Forms',
-        'Dialog',
-        'ScrollTop'
-      ]
-    },
-    directives: {
-       include: [
-        'Button',
-        'Avatar',
-        'Textarea',
-        'Tag',
-        'Image',
-        'Floatlabel',
-        'Drawer',
-        'Forms',
-        'Dialog',
-        'ScrollTop'
-      ]
-    },
-    options: {
-      theme: {
-        preset: Theme,
-        options: {
-          darkModeSelector: '.dark-mode',
-          cssLayer: {
-            name: 'primevue',
-            order: 'tailwind-base, primevue, tailwind-utilities'
-          }
-        }
-      },
-      ripple: true,
     },
   },
   site: {
@@ -141,7 +94,7 @@ export default defineNuxtConfig({
 
         '/_ipx/f_webp/images/projects/jb_refacciones.webp',
         '/_ipx/f_webp/images/projects/jb_refacciones.webp',
-        
+
         '/_ipx/f_webp/images/projects/mimo.webp',
         '/_ipx/f_webp/images/projects/mimo.webp',
 
