@@ -1,12 +1,12 @@
 import { projects } from '~/data/projects'
-import type {  ProjectI18n } from '~/types/project'
+import type {  ProjectI18n } from '@@/shared/types/project'
 
 export const useProjects = () => {
   const { t } = useI18n()
-  
+
   const mainProjects = computed(() : ProjectI18n[] => {
     return projects.filter(
-      project => project.simple === undefined || project.simple === false 
+      project => project.simple === undefined || project.simple === false
     ).map(project => ({
       ...project,
       title: t(`projects.${project.id}.title`),
@@ -30,11 +30,11 @@ export const useProjects = () => {
   const getProjectById = (id: string) => {
     return projects.find(project => project.id === id)
   }
-  
+
   const filterByTechnology = (techId: string) => {
     return projects.filter(project => project.technologies.includes(techId))
   }
-  
+
   return {
     projects: mainProjects,
     minorContributions,

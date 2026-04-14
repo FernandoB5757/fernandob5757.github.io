@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 import { cn } from "@/lib/utils";
-import { ORBIT_DIRECTION, type OrbitProps } from "@/types/orbit";
+import { ORBIT_DIRECTION, type OrbitProps } from "@@/shared/types/orbit";
 import { computed } from "vue";
 
 const props = withDefaults(defineProps<OrbitProps>(), {

@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectI18n } from '~/types/project'
+import type { ProjectI18n } from '@@/shared/types/project'
 
 const props = defineProps<{
   projects: ProjectI18n[]

@@ -10,13 +10,13 @@
   >
   <template #container="{ closeCallback }">
       <div>
-          <Button  
-            iconPos="right" 
-            @click="closeCallback" 
+          <Button
+            iconPos="right"
+            @click="closeCallback"
             class="!absolute top-2 right-2 !rounded-full"
-            rounded 
-            severity="secondary" 
-            variant="outlined" 
+            rounded
+            severity="secondary"
+            variant="outlined"
             role="button"
             :aria-label="$t('accessibility.closemodal')"
           >
@@ -30,23 +30,23 @@
 
             <Image :alt="project.image.alt" preview>
                 <template #image>
-                    <NuxtImg :src="project.image.src" 
+                    <NuxtImg :src="project.image.src"
                       format="webp"
                       class="details-image"
                       loading="lazy"
-                      fetch-priority="low"  
+                      fetch-priority="low"
                     />
                 </template>
                  <template #preview="slotProps">
-                    <NuxtImg :src="project.image.src" 
+                    <NuxtImg :src="project.image.src"
                         format="webp"
                         :img-attrs="{
-                                style: slotProps.style, 
-                                width: 1280, 
-                                height: 720, 
+                                style: slotProps.style,
+                                width: 1280,
+                                height: 720,
                                 loading: 'lazy',
                                 'fetch-priority': 'low'
-                            }" 
+                            }"
                       />
                   </template>
             </Image>
@@ -68,7 +68,7 @@
                     {{ t('dates.start') }} :
                   </strong>
                   <span>
-                    {{ formatDate(project.date.start) }} 
+                    {{ formatDate(project.date.start) }}
                   </span>
                 </li>
 
@@ -85,7 +85,7 @@
 
             <div class="details-section">
               <div class="flex flex-wrap gap-2 mt-2">
-                  <Tag v-for="techId in project.technologies" 
+                  <Tag v-for="techId in project.technologies"
                       :key="techId"
                       :value="techId"
                       rounded
@@ -98,11 +98,11 @@
             <div class="flex mt-5 justify-end">
               <Button
                 v-if="project.url"
-                :href="project.url" 
+                :href="project.url"
                 as="a"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
-                severity="primary" 
+                severity="primary"
                 variant="text"
                 raised
                 role="link"
@@ -114,7 +114,7 @@
               <Button
                 v-else
                 rel="noopener"
-                severity="primary" 
+                severity="primary"
                 variant="text"
                 raised
                 role="contentinfo"
@@ -122,9 +122,9 @@
               >
                 {{ t('Coming soon') }}
               </Button>
-              
+
             </div>
-            
+
           </div>
 
         </div>
@@ -143,14 +143,14 @@
               {{ project.contribution }}
           </p>
            <div class="flex flex-wrap gap-2 mt-5">
-                <Tag v-for="keyword in project.meta?.keywords" 
+                <Tag v-for="keyword in project.meta?.keywords"
                     :key="keyword"
                     :value="keyword"
                     rounded
                     class="bg-cyan-500/10 text-cyan-600 dar:bg-cyan-800/10 dark:text-cyan-800 hover:bg-cyan-500/5"
                 ></Tag>
           </div>
-        </div>     
+        </div>
 
       </div>
 
@@ -159,7 +159,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectI18n } from '~/types/project'
+import type { ProjectI18n } from '@@/shared/types/project'
 
 const props = defineProps<{
   project: ProjectI18n

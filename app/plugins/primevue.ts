@@ -1,6 +1,6 @@
 import { defineNuxtPlugin } from '#app'
 import PrimeVue from 'primevue/config'
-import Theme from '../themes/default'
+import Theme from '@@/themes/default'
 
 // Componentes (solo los que se usan)
 import Button from 'primevue/button'

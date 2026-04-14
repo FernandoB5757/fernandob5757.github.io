@@ -20,5 +20,3 @@ export interface OrbitTechnology extends OrbitProps {
   slug: string,
   icon?: string
 }
-
-export { default as Orbit } from "@/components/animations/Orbit.vue";

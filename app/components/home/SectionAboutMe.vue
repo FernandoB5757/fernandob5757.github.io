@@ -11,18 +11,18 @@
                 />
             </span>
 
-            <AnimationsOrbit v-for="technology in back" 
+            <AnimationsOrbit v-for="technology in back"
                 class="size-[30px] items-center justify-center border-none bg-transparent"
                 :duration="technology.duration"
                 :delay="technology.delay"
                 :radius="technology.radius"
                 :direction="technology.direction"
             >
-                <NuxtImg :src="technology.icon" 
-                    :alt="'Image of ' +  technology.slug" 
+                <NuxtImg :src="technology.icon"
+                    :alt="'Image of ' +  technology.slug"
                     class="w-10 h-10"
                     width="40"
-                    height="40" 
+                    height="40"
                     loading="lazy"
                     fetch-priority="low"
                 />
@@ -55,7 +55,7 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent, hydrateOnIdle } from 'vue'
-import { ORBIT_DIRECTION ,type OrbitTechnology} from "@/types/orbit";
+import { ORBIT_DIRECTION ,type OrbitTechnology} from "@@/shared/types/orbit";
 
 const AnimationsOrbit = defineAsyncComponent({
   loader: () => import('@/components/animations/Orbit.vue'),
@@ -78,7 +78,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 100,
         direction : ORBIT_DIRECTION.Clockwise
     },
-    
+
     {
         slug : 'postgresql',
         duration : 135,
@@ -102,7 +102,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 100,
         direction : ORBIT_DIRECTION.CounterClockwise
     },
-  
+
 
 
     //DEV OPs
@@ -138,7 +138,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 130,
         direction : ORBIT_DIRECTION.CounterClockwise
     },
-    
+
     //GIT
     {
         slug : 'git',
@@ -155,7 +155,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 160,
         direction : ORBIT_DIRECTION.Clockwise
     },
-    
+
     {
         slug : 'jira',
         duration : 100,
@@ -188,7 +188,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 190,
         direction : ORBIT_DIRECTION.CounterClockwise
     },
-    
+
     {
         slug : 'typescript',
         duration : 75,
@@ -211,7 +211,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 190,
         direction : ORBIT_DIRECTION.Clockwise
     },
-  
+
     {
         slug : 'vue.js',
         duration : 75,
@@ -219,7 +219,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 190,
         direction : ORBIT_DIRECTION.CounterClockwise
     },
-   
+
     {
         slug : 'filament',
         duration : 75,
@@ -227,7 +227,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 190,
         direction : ORBIT_DIRECTION.Clockwise
     },
-   
+
     {
         slug : 'alpine.js',
         duration : 75,
@@ -235,7 +235,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 190,
         direction : ORBIT_DIRECTION.CounterClockwise
     },
-    
+
     {
         slug : 'nuxt',
         duration : 75,
@@ -243,7 +243,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 190,
         direction : ORBIT_DIRECTION.Clockwise
     },
-    
+
     {
         slug : 'tailwindcss',
         duration : 75,
@@ -251,7 +251,7 @@ const AnimationsOrbit = defineAsyncComponent({
         radius: 190,
         direction : ORBIT_DIRECTION.CounterClockwise
     },
-    
+
     {
         slug : 'bootstrap',
         duration : 75,

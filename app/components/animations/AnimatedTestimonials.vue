@@ -70,7 +70,7 @@
             duration: 0.2,
             ease: 'easeInOut',
           }"
-           
+
         >
           <h3 class="text-2xl font-bold text-black dark:text-white">
             {{ props.testimonials[active].title }}
@@ -134,7 +134,7 @@
 
 <script lang="ts" setup>
 import { Motion,AnimatePresence } from "motion-v";
-import type {  ProjectI18n } from '~/types/project'
+import type {  ProjectI18n } from '@@/shared/types/project'
 
 interface Props {
   testimonials?: ProjectI18n[];

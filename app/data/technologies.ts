@@ -1,4 +1,4 @@
-import type { Technology } from '~/types/technology'
+import type { Technology } from '@@/shared/types/technology'
 
 export const technologies: Technology[] = [
   // Programming languages

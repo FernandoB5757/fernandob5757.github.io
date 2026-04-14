@@ -6,10 +6,10 @@ export default <Partial<Config>>{
   darkMode: ['selector', '.dark-mode'],
   plugins: [require('tailwindcss-primeui'),animate,setupInspiraUI],
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./pages/**/*.{js,vue,ts}",
-    "./layouts/**/*.{js,vue,ts}",
-    "./plugins/**/*.{js,vue,ts}",
+    "./app/components/**/*.{js,vue,ts}",
+    "./app/pages/**/*.{js,vue,ts}",
+    "./app/layouts/**/*.{js,vue,ts}",
+    "./app/plugins/**/*.{js,vue,ts}",
     "./themes/**/*.{js,vue,ts}",
     "./nuxt.config.{js,vue,ts}",
   ],
@@ -33,7 +33,7 @@ export default <Partial<Config>>{
           '800': 'rgb(var(--color-red-plug-800))',
           '900': 'rgb(var(--color-red-plug-900))',
           '950': 'rgb(var(--color-red-plug-950))',
-        } 
+        }
       },
       boxShadow: {
         'blue-neon': `

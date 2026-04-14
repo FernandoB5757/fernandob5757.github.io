@@ -1,9 +1,9 @@
 import { experiences } from '~/data/experiences'
-import type {  ExperienceI18n } from '~/types/index'
+import type {  ExperienceI18n } from '@@/shared/types/index'
 
 export const useExperiences = () => {
   const { t } = useI18n()
-  
+
   const experiencesWithI18n = computed(() : ExperienceI18n[] => {
       return experiences.map(experience => ({
         ...experience,
@@ -12,11 +12,11 @@ export const useExperiences = () => {
       }))
       .sort((a, b) =>  a.order - b.order)
   })
-  
+
   const getProjectById = (id: string) => {
     return experiencesWithI18n.value.find(project => project.id === id)
   }
-  
+
   return {
     experiences: experiencesWithI18n,
     getProjectById,

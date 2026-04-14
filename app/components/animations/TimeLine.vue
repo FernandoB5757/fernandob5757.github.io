@@ -17,7 +17,7 @@
     >
       <div v-for="(item, index) in items"
         :key="item.id"
-        class="relative z-10 mb-12 flex w-11/12 xl:w-full mx-5 xl:mx-0 group" 
+        class="relative z-10 mb-12 flex w-11/12 xl:w-full mx-5 xl:mx-0 group"
       >
           <div :class="[
                 'w-full xl:w-1/2',
@@ -25,16 +25,16 @@
               ]"
           >
               <div class="card">
-                <NuxtPicture 
-                  :src="item.image.src" 
+                <NuxtPicture
+                  :src="item.image.src"
                   format="webp"
                   :img-attrs="{
-                      alt: `image of ${item.image.alt}`, 
-                      class: 'h-24 w-auto bg-surface-300 dark:bg-transparent rounded p-2 ' + (index % 2 === 0 ? 'xl:ml-auto' : 'xl:mr-auto'), 
-                      height: item.image?.height ?? 150, 
+                      alt: `image of ${item.image.alt}`,
+                      class: 'h-24 w-auto bg-surface-300 dark:bg-transparent rounded p-2 ' + (index % 2 === 0 ? 'xl:ml-auto' : 'xl:mr-auto'),
+                      height: item.image?.height ?? 150,
                       width: item.image?.width ?? 150,
                       loading: 'lazy'
-                    }" 
+                    }"
                 />
                 <div class="heading">
                   <div class="title">
@@ -60,7 +60,7 @@
 
       <div :style="{
               height: props.height + 'px',
-            }" 
+            }"
         class="absolute w-full top-0 flex justify-start xl:justify-center"
       >
           <div class="x-0 relative w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-0% via-neutral-200 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] dark:via-neutral-700"
@@ -71,13 +71,13 @@
                 height: heightTransform,
                 opacity: opacityTransform,
               }"
-              class="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t 
+              class="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t
               from-blue-400 dark:from-blue-200 from-10% via-blue-200 dark:via-blue-950 via-30% to-transparent"
             >
             </Motion>
         </div>
       </div>
-      
+
     </div>
   </div>
 </template>
@@ -85,7 +85,7 @@
 <script lang="ts" setup>
 import { Motion, useScroll, useTransform } from "motion-v";
 import type { HTMLAttributes } from "vue";
-import type {  ExperienceI18n } from '~/types/index'
+import type {  ExperienceI18n } from '@@/shared/types/index'
 
 interface Props {
   containerClass?: HTMLAttributes["class"];
@@ -137,14 +137,14 @@ const heightTransform = useTransform(scrollYProgress, [0, 1], [0, props.height +
   @apply rounded-xl mt-4 mb-8 py-4 px-4 transition duration-700 border
     bg-white group-hover:bg-primary-100
     dark:border-gray-800 dark:group-hover:border-gray-500
-    dark:bg-transparent dark:group-hover:bg-gray-900 
+    dark:bg-transparent dark:group-hover:bg-gray-900
    ;
 }
 
-   
-/* 
- group-hover:bg-primary-300 
-    group-hover:scale-100 
+
+/*
+ group-hover:bg-primary-300
+    group-hover:scale-100
     border border-primary-200 group-hover:border-primary-500
  */
 </style>

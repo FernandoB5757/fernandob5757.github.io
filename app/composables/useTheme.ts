@@ -1,9 +1,9 @@
 
-import type { Theme } from '@/types/index'
+import type { Theme } from '@@/shared/types/index'
 
 export const useTheme = () => {
     const colorMode = useColorMode() // 'dark' | 'light' | 'system'
-    
+
     const isDark = computed(() => colorMode.value === 'dark')
 
     const themes: Theme[] = [
@@ -11,7 +11,7 @@ export const useTheme = () => {
         { 'key': 'light', 'label': 'Light', 'icon': 'heroicons:sun' },
         { 'key': 'dark', 'label': 'Dark', 'icon': 'heroicons:moon' },
     ]
-    
+
     const index = ref<number>(0)
 
     index.value = themes.findIndex((theme: Theme) => theme.key === colorMode.preference)
@@ -24,7 +24,7 @@ export const useTheme = () => {
         selectedTheme.value = themes[index.value]
     }
 
-    return { 
+    return {
         colorMode,
         isDark,
         themes,

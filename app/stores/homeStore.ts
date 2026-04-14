@@ -1,5 +1,5 @@
 
-import type { SocialRef, BestSkill} from "@/types/index";
+import type { SocialRef, BestSkill} from "@@/shared/types/index";
 import { ref } from "vue";
 
 export const socialLinks: Ref<SocialRef[]> = ref([

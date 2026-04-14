@@ -1,5 +1,5 @@
 import { technologies } from '~/data/technologies'
-import type { Technology, TechnologyCategory } from '~/types/technology'
+import type { Technology, TechnologyCategory } from '@@/shared/types/technology'
 
 export const useTechnologies = () => {
 

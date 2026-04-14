@@ -13,7 +13,7 @@
             @click="isOpen = true"
           />
         </div>
-        
+
         <div class="project-content">
           <div class="project-title" @click="isOpen = true">
             {{ project.title }}
@@ -23,7 +23,7 @@
           </p>
       </div>
       <div class="flex flex-row flex-wrap gap-1 mt-2">
-        <Tag v-for="techId in technologies" 
+        <Tag v-for="techId in technologies"
               :key="techId"
               :value="techId"
               rounded
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <LazyProjectsProjectDetails 
+    <LazyProjectsProjectDetails
       :project="project"
       v-model:visible="isOpen"
       hydrate-on-visible
@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectI18n } from '~/types/project'
+import type { ProjectI18n } from '@@/shared/types/project'
 
 const props = defineProps<{
   project: ProjectI18n
@@ -59,7 +59,7 @@ const technologies = computed(
 
 .project-card {
   @apply p-7 max-w-sm h-96 border relative
-    rounded-lg shadow-lg 
+    rounded-lg shadow-lg
   bg-white hover:bg-primary-100 border-primary-200
     dark:bg-surface-900 dark:border-surface-700 dark:hover:bg-surface-950
     transition ease-in-out duration-300
