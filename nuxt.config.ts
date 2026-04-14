@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+declare const process: { env: Record<string, string | undefined> }
+
 export default defineNuxtConfig({
-  srcDir: 'app',
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2025-07-14',
   devtools: { enabled: true },
   ssr: true,
   typescript: {
@@ -41,9 +42,6 @@ export default defineNuxtConfig({
     defaultLocale: 'es',
     strategy: 'prefix_except_default',
     baseUrl: process.env.APP_URL || 'https://fernandobg.com',
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
   },
   colorMode: {
 
@@ -51,7 +49,6 @@ export default defineNuxtConfig({
   image: {
     format: ['webp'],
     provider: 'ipx',
-    isLocal: false,
   },
   runtimeConfig: {
     serverToken: process.env.SERVER_TOKEN,

@@ -40,68 +40,68 @@
       </Transition>
     </div>
   </template>
-  
+
   <script setup lang="ts">
   import { ref, computed, onMounted, onBeforeUnmount, watch } from "vue";
-  
+
   interface Props {
     words: string[];
     duration?: number;
     class?: string;
   }
-  
+
   const props = withDefaults(defineProps<Props>(), {
     duration: 3000,
     class: "",
   });
-  
+
   defineEmits(["animationStart", "animationComplete"]);
-  
+
   const currentWord = ref(props.words[0]);
   const isVisible = ref(true);
   const timeoutId = ref<number | null>(null);
-  
+
   function startAnimation() {
     isVisible.value = false;
-  
+
     setTimeout(() => {
-      const currentIndex = props.words.indexOf(currentWord.value);
-      const nextWord = props.words[currentIndex + 1] || props.words[0];
+      const currentIndex = props.words.indexOf(currentWord.value!);
+      const nextWord = props.words[currentIndex + 1] ?? props.words[0]!;
       currentWord.value = nextWord;
       isVisible.value = true;
     }, 600);
   }
-  
+
   const splitWords = computed(() => {
-    return currentWord.value.split(" ").map((word: string) => ({
+    return currentWord.value!.split(" ").map((word: string) => ({
       word,
       letters: word.split(""),
     }));
   });
-  
+
   function startTimeout() {
     timeoutId.value = window.setTimeout(() => {
       startAnimation();
     }, props.duration);
   }
-  
+
   onMounted(() => {
     startTimeout();
   });
-  
+
   onBeforeUnmount(() => {
     if (timeoutId.value) {
       clearTimeout(timeoutId.value);
     }
   });
-  
+
   watch(isVisible, (newValue: boolean) => {
     if (newValue) {
       startTimeout();
     }
   });
   </script>
-  
+
   <style>
   @keyframes fadeInWord {
     0% {
@@ -115,7 +115,7 @@
       filter: blur(0);
     }
   }
-  
+
   @keyframes fadeInLetter {
     0% {
       opacity: 0;
@@ -128,15 +128,15 @@
       filter: blur(0);
     }
   }
-  
+
   .v-enter-active {
     animation: enterWord 0.6s ease-in-out forwards;
   }
-  
+
   .v-leave-active {
     animation: leaveWord 0.6s ease-in-out forwards;
   }
-  
+
   @keyframes enterWord {
     0% {
       opacity: 0;
@@ -147,7 +147,7 @@
       transform: translateY(0);
     }
   }
-  
+
   @keyframes leaveWord {
     0% {
       opacity: 1;

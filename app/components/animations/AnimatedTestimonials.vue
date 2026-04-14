@@ -73,10 +73,10 @@
 
         >
           <h3 class="text-2xl font-bold text-black dark:text-white">
-            {{ props.testimonials[active].title }}
+            {{ props.testimonials[active]?.title }}
           </h3>
           <p class="text-sm text-gray-500 dark:text-neutral-500">
-            {{ props.testimonials[active].description }}
+            {{ props.testimonials[active]?.description }}
           </p>
           <Motion
             as="p"
@@ -156,7 +156,7 @@ const isHover = ref(false);
 const interval = ref<any>();
 
 const activeTestimonialQuote = computed(() => {
-  return props.testimonials[active.value].long_description?.split(" ");
+  return props.testimonials[active.value]?.long_description?.split(" ");
 });
 
 onMounted(() => {

@@ -1,16 +1,16 @@
 <template>
-    <Button type="button" 
-        severity="secondary" 
-        @click="changeTheme" 
+    <Button type="button"
+        severity="secondary"
+        @click="changeTheme"
         size="large"
-        variant="text" 
+        variant="text"
         rounded
         class="bg-transparent"
         role="button"
         :aria-label="$t('accessibility.changetheme')"
     >
         <template #icon>
-            <Icon :name="selectedTheme.icon" />
+            <Icon :name="selectedTheme?.icon ?? 'heroicons:computer-desktop'" />
         </template>
     </Button>
 </template>

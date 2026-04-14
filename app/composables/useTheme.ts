@@ -20,8 +20,8 @@ export const useTheme = () => {
 
     const changeTheme = () => {
         index.value = index.value < 2 ? index.value + 1 : 0
-        colorMode.preference = themes[index.value].key
-        selectedTheme.value = themes[index.value]
+        colorMode.preference = themes[index.value]!.key
+        selectedTheme.value = themes[index.value]!
     }
 
     return {

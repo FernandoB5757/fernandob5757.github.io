@@ -10,16 +10,15 @@ const head = useLocaleHead({
   seo: true,
   dir: true,
   lang: true,
-  key: 'id',
 })
 
 useHead(() => ({
   htmlAttrs: {
     lang: head.value.htmlAttrs?.lang || locale.value,
-    dir: head.value.htmlAttrs?.dir || 'ltr',
+    dir: (head.value.htmlAttrs?.dir || 'ltr') as 'ltr' | 'rtl' | 'auto',
   },
-  link: [...(head.value.link || [])],
-  meta: [...(head.value.meta || [])],
+  link: [...(head.value.link || [])] as any[],
+  meta: [...(head.value.meta || [])] as any[],
 }))
 
 useServerSeoMeta({
