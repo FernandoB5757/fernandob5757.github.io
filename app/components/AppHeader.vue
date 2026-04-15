@@ -3,11 +3,11 @@
     <Drawer v-model:visible="showMenu">
         <template #header>
             <div class="flex items-center gap-2">
-                <Avatar class="p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" 
-                    size="xlarge" 
-                    shape="circle" 
+                <Avatar class="p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                    size="xlarge"
+                    shape="circle"
                 >
-                    <NuxtImg src="/images/me-sm.webp" 
+                    <NuxtImg src="/images/me-sm.webp"
                         format="webp"
                         width="64"
                         height="64"
@@ -32,15 +32,15 @@
         </template>
     </Drawer>
 
-    <header class="py-2 sticky top-0 transition-colors duration-500 z-20 flex justify-center" 
+    <header class="py-2 sticky top-0 transition-colors duration-500 z-20 flex justify-center"
         :class="{'bg-surface-100 dark:bg-surface-900': showHeaderBackground}"
     >
         <nav class="container flex justify-between px-5 py-3">
             <div class="h-16 mt-1">
-                <Avatar class="rounded-full ring-2 ring-gray-300 dark:ring-gray-500" 
+                <Avatar class="rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
                     :class="{ 'visible' : showHeaderBackground , 'hidden' : ! showHeaderBackground}"
-                    size="xlarge" 
-                    shape="circle" 
+                    size="xlarge"
+                    shape="circle"
                 >
                     <NuxtImg src="/images/me-sm.webp"
                         format="webp"
@@ -53,16 +53,16 @@
             </div>
             <div class="flex items-end">
                 <div class="block md:hidden">
-                    <Button text 
-                        size="large" 
-                        @click="toggleMenu" 
-                        severity="secondary" 
+                    <Button text
+                        size="large"
+                        @click="toggleMenu"
+                        severity="secondary"
                         :aria-label="$t('openmenu')"
                         role="button"
                     >
                         <Icon name="heroicons:bars-3" class="text-2xl"/>
                     </Button>
-                </div>                        
+                </div>
                 <div class="hidden md:block">
                     <AppMenu />
                 </div>
@@ -93,7 +93,10 @@ watch(verticalWindowScroll, async (value: number) => {
     showHeaderBackground.value = value > scrollThreshold.value
 })
 
-const randomFloat = Math.floor(Math.random() * 4);
+const randomFloat = ref(0)
+onMounted(() => {
+    randomFloat.value = Math.floor(Math.random() * 4)
+})
 
 </script>
 

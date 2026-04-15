@@ -2,7 +2,9 @@
     <div class="background-container">
         <div class="background-component">
             <AnimationsInteractiveGridPattern
-                :class="'[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]'" :squares="[80, 80]"
+                :class="'[mask-image:radial-gradient(650px_circle_at_center,white,transparent)]'" :squares="[30, 30]"
+                :width="55"
+                :height="55"
                 squares-class-name="bg:hover:fill-primary-100 hover:fill-primary-500" />
         </div>
 

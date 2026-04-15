@@ -23,6 +23,11 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/sitemap',
   ],
+  fonts: {
+    defaults: {
+      subsets: ['latin'],
+    },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -95,6 +100,9 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '-mode',
   },
+  icon: {
+    serverBundle: 'auto',
+  },
   image: {
     format: ['webp'],
     provider: 'ipx',
@@ -107,6 +115,12 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
+    routeRules: {
+      '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+      '/_fonts/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+      '/images/**': { headers: { 'Cache-Control': 'public, max-age=2592000, s-maxage=2592000' } },
+      '/_ipx/**': { headers: { 'Cache-Control': 'public, max-age=2592000, s-maxage=2592000' } },
+    },
     prerender: {
       failOnError: false,
       routes: [
@@ -123,34 +137,17 @@ export default defineNuxtConfig({
         '/_ipx/f_webp&s_64x64/images/me-sm.webp',
         '/_ipx/f_webp&s_128x128/images/me-sm.webp',
 
-        '/_ipx/f_webp&s_128x128/images/me-sm.webp',
-
-        '/_ipx/w_320&f_webp/images/me-md.webp',
-        '/_ipx/w_640&f_webp/images/me-md.webp',
-        '/_ipx/w_768&f_webp/images/me-md.webp',
-        '/_ipx/w_1024&f_webp/images/me-md.webp',
-        '/_ipx/w_1280&f_webp/images/me-md.webp',
-        '/_ipx/w_1536&f_webp/images/me-md.webp',
-        '/_ipx/w_2048&f_webp/images/me-md.webp',
-        '/_ipx/w_2560&f_webp/images/me-md.webp',
-        '/_ipx/w_3072&f_webp/images/me-md.webp',
-
-
         '/_ipx/f_webp/images/projects/ekar.webp',
-        '/_ipx/f_webp/images/projects/ekar.webp',
-
         '/_ipx/f_webp/images/projects/jb_refacciones.webp',
-        '/_ipx/f_webp/images/projects/jb_refacciones.webp',
-
         '/_ipx/f_webp/images/projects/mimo.webp',
-        '/_ipx/f_webp/images/projects/mimo.webp',
-
         '/_ipx/f_webp/images/projects/solarudg.webp',
-        '/_ipx/f_webp/images/projects/solarudg.webp',
-
         '/_ipx/f_webp/images/projects/tubin.webp',
-        '/_ipx/f_webp/images/projects/tubin.webp'
 
+        '/_ipx/f_webp/images/projects/ekar_thumb.webp',
+        '/_ipx/f_webp/images/projects/jb_refacciones_thumb.webp',
+        '/_ipx/f_webp/images/projects/mimo_thumb.webp',
+        '/_ipx/f_webp/images/projects/solarudg_thumb.webp',
+        '/_ipx/f_webp/images/projects/tubin_thumb.webp',
       ]
     }
   },

@@ -5,8 +5,10 @@
           <NuxtImg
             :src="project.thumbnail"
             format="webp"
-            :width="project.image.width || 400"
-            :height="project.image.height || 300"
+            width="400"
+            height="210"
+            sizes="sm:280px md:300px lg:350px"
+            quality="75"
             :alt="project.image.alt"
             class="group-hover:scale-110 transition ease-in-out delay-150 duration-300 rounded-lg"
             loading="lazy"

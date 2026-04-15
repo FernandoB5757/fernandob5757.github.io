@@ -11,21 +11,23 @@
                         </div>
                         <Image src="/images/me-xl.webp"  :pt:preview-mask:class="'lw-full bg-transparent'">
                             <template #image>
-                                <NuxtImg src="/images/me-md.webp" 
+                                <NuxtImg src="/images/me-md.webp"
                                     preload
+                                    fetchpriority="high"
                                     format="webp"
                                     width="400"
                                     height="400"
-                                    alt="Fernando Barajas" 
+                                    sizes="240px md:288px lg:384px"
+                                    alt="Fernando Barajas"
                                     class="rounded w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96"
                                 />
                             </template>
                             <template #original="slotProps">
-                                <NuxtImg src="/images/me-xl.webp" 
+                                <NuxtImg src="/images/me-xl.webp"
                                     format="webp"
                                     width="800"
                                     height="800"
-                                    alt="Fernando Barajas" 
+                                    alt="Fernando Barajas"
                                     loading="lazy"
                                 />
                             </template>
@@ -70,7 +72,7 @@
                             <div class="w-1/2">
                                 <span class="text-sm tracking-wide uppercase">
                                     {{ $t('findme') }}
-                                </span> 
+                                </span>
                                 <div class="flex flex-row gap-1 sm:gap-3 uppercase">
                                     <LazyAnimationsCardSpotlight
                                         v-for="(socialLink, key) in socialLinks"
@@ -82,13 +84,13 @@
                                         hydrate-on-idle
                                     >
                                         <a :href="socialLink.link"
-                                            target="_blank" 
-                                            rel="noreferrer noopener" 
+                                            target="_blank"
+                                            rel="noreferrer noopener"
                                             :aria-label="socialLink.ariaLabel"
                                             class="flex items-center justify-center"
                                         >
-                                            <Icon :name="socialLink.icon" 
-                                                class="dark:text-surface-400 text-surface-500 hover:text-primary text-4xl" 
+                                            <Icon :name="socialLink.icon"
+                                                class="dark:text-surface-400 text-surface-500 hover:text-primary text-4xl"
                                             />
                                         </a>
                                     </LazyAnimationsCardSpotlight>
@@ -109,8 +111,8 @@
                                         :gradient-opacity="0.8"
                                         hydrate-on-idle
                                     >
-                                        <Icon :name="skills.icon" 
-                                            class="dark:text-surface-400 text-surface-500 hover:text-primary text-4xl" 
+                                        <Icon :name="skills.icon"
+                                            class="dark:text-surface-400 text-surface-500 hover:text-primary text-4xl"
                                         />
                                     </LazyAnimationsCardSpotlight>
                                 </div>
@@ -121,8 +123,8 @@
             </div>
         </div>
     </div>
-    
-    <LazyAnimationsWavyBackground 
+
+    <LazyAnimationsWavyBackground
         :colors="[
             '#bfcdfe',
             '#93abfd',
@@ -130,14 +132,14 @@
             '#3b66f6',
             '#2552eb',
             '#1d48d8'
-        ]"       
+        ]"
         canvaClass="absolute inset-0 h-[1000px] md:h-[800px]"
         :waveOpacity="0.2"
         hydrate-on-idle
     />
 </template>
 
-<script setup lang="ts">    
+<script setup lang="ts">
 import { useTheme } from '~/composables/useTheme'
 import { socialLinks,bestSkills } from "@/stores/homeStore";
 

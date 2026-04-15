@@ -3,7 +3,7 @@
         <section id="welcome-home">
             <HomeSectionHome />
         </section>
-        
+
         <section id="about-me" class="limit-elements">
             <LazyHomeSectionAboutMe hydrate-on-visible />
         </section>
@@ -53,9 +53,6 @@ useSeoMeta({
 })
 
 useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl },
-  ],
   script: [
     {
       type: 'application/ld+json',

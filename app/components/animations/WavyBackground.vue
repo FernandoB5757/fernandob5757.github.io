@@ -54,6 +54,12 @@ import { useTheme }  from "@/composables/useTheme";
     nt = 0,
     ctx: CanvasRenderingContext2D | null = null;
   let animationId: number;
+  let lastFrameTime = 0;
+  const targetFPS = 30;
+  const frameDuration = 1000 / targetFPS;
+  let isPageVisible = true;
+  let isInViewport = true;
+  let observer: IntersectionObserver | null = null;
 
   const canvasRef = templateRef<HTMLCanvasElement | null>("canvasRef");
 
@@ -75,14 +81,27 @@ import { useTheme }  from "@/composables/useTheme";
         }
 
         ctx.filter = `blur(${props.blur}px)`;
-        window.onresize = () => {
+
+        const handleResize = () => {
           if (parent) {
             w = ctx!.canvas.width = parent.clientWidth;
             h = ctx!.canvas.height = parent.clientHeight;
           }
           ctx!.filter = `blur(${props.blur}px)`;
         };
-        render();
+        window.addEventListener('resize', handleResize, { passive: true });
+
+        observer = new IntersectionObserver(
+          ([entry]) => { isInViewport = entry!.isIntersecting; },
+          { threshold: 0 }
+        );
+        observer.observe(canvas);
+
+        document.addEventListener('visibilitychange', () => {
+          isPageVisible = !document.hidden;
+        });
+
+        render(0);
       }
     }
   }
@@ -93,9 +112,9 @@ import { useTheme }  from "@/composables/useTheme";
       ctx!.beginPath();
       ctx!.lineWidth = props.waveWidth!;
       ctx!.strokeStyle = props.colors[i % props.colors!.length] ?? '';
-      for (let x = 0; x < w; x += 5) {
+      for (let x = 0; x < w; x += 8) {
         const y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx!.lineTo(x, y + h * 0.5); // Adjust for height, at 50% of the container
+        ctx!.lineTo(x, y + h * 0.5);
       }
       ctx!.stroke();
       ctx!.closePath();
@@ -104,18 +123,26 @@ import { useTheme }  from "@/composables/useTheme";
 
   const canvaBackgroundFill = computed(() => isDark.value ? props.backgroundFillDark : props.backgroundFill);
 
-  function render() {
+  function render(timestamp: number) {
+    animationId = requestAnimationFrame(render);
+
+    if (!isPageVisible || !isInViewport) return;
+
+    const elapsed = timestamp - lastFrameTime;
+    if (elapsed < frameDuration) return;
+    lastFrameTime = timestamp - (elapsed % frameDuration);
+
     if (ctx) {
       ctx.fillStyle = canvaBackgroundFill.value!;
       ctx.globalAlpha = props.waveOpacity!;
       ctx.fillRect(0, 0, w, h);
-      drawWave(5);
-      animationId = requestAnimationFrame(render);
+      drawWave(3);
     }
   }
 
   onBeforeUnmount(() => {
     cancelAnimationFrame(animationId);
+    observer?.disconnect();
   });
 
   const isSafari = ref(false);
