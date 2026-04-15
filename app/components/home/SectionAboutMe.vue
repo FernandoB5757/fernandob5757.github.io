@@ -46,8 +46,47 @@
                     </p>
                 </blockquote>
             </div>
-            <div class="flex flex-wrap gap-4 md:gap-8 py-4 md:y-8">
-                <!-- <Tag :value="technology" v-for="technology in technologies"></Tag> -->
+
+            <div class="my-4">
+                <h3 class="text-lg md:text-xl font-semibold font-serif mb-3">
+                    {{ $t('aboutme_values_title') }}
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        v-for="valueKey in ['solutions', 'learning', 'leadership', 'quality']"
+                        :key="valueKey"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium
+                               bg-primary-500/10 text-primary-700 dark:text-primary-400"
+                    >
+                        <Icon name="heroicons:check-badge" class="text-base" />
+                        {{ $t(`aboutme_values.${valueKey}`) }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 mt-4">
+                <a href="https://github.com/FernandoB5757"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
+                    :aria-label="$t('accessibility.gotomy') + ' github'"
+                >
+                    <Icon name="fa6-brands:github" class="text-2xl" />
+                </a>
+                <a href="https://www.linkedin.com/in/jes%C3%BAs-fernando-barajas-galindo-965149285/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
+                    :aria-label="$t('accessibility.gotomy') + ' linkedin'"
+                >
+                    <Icon name="fa6-brands:linkedin-in" class="text-2xl" />
+                </a>
+                <a href="mailto:me@fernandobg.com"
+                    class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
+                    :aria-label="$t('accessibility.gotomy') + ' email'"
+                >
+                    <Icon name="heroicons:envelope" class="text-2xl" />
+                </a>
             </div>
         </AnimationsBlurReveal>
     </div>

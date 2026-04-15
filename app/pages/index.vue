@@ -8,6 +8,10 @@
             <LazyHomeSectionAboutMe hydrate-on-visible />
         </section>
 
+        <section id="stats-section" class="limit-elements">
+            <LazyHomeSectionStats hydrate-on-visible />
+        </section>
+
         <section id="my-portfolio" class="limit-elements">
             <LazyHomeSectionPortfolio hydrate-on-visible />
         </section>

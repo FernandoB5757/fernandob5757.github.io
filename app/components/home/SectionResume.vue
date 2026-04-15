@@ -22,15 +22,8 @@
 </template>
 
 <script setup lang="ts">
-// import { defineAsyncComponent, hydrateOnVisible } from 'vue'
-
 import BlurReveal from '../animations/BlurReveal.vue';
 import { useExperiences } from '~/composables/useExperiences';
-
-// const Timeline = defineAsyncComponent({
-//   loader: () => import('../animations/TimeLine.vue'),
-//   hydrate: hydrateOnVisible()
-// })
 
 const { experiences } = useExperiences();
 </script>

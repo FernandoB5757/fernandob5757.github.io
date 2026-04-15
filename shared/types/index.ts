@@ -40,5 +40,6 @@ export interface Experience {
 
 export interface ExperienceI18n extends Experience{
     title: string;
+    role?: string;
     description: string;
 }

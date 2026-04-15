@@ -40,6 +40,9 @@
                   <div class="title">
                       {{ item.title }}
                   </div>
+                  <span v-if="item.role" class="block text-sm font-medium text-primary-600 dark:text-primary-400 mb-1">
+                      {{ item.role }}
+                  </span>
                   <span class="block text-sm">
                       {{ item.date.start }}
                   </span>

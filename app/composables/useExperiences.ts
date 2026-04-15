@@ -8,6 +8,7 @@ export const useExperiences = () => {
       return experiences.map(experience => ({
         ...experience,
         title: experience.title ?? t(`experiences.${experience.id}.title`),
+        role: t(`experiences.${experience.id}.role`),
         description: t(`experiences.${experience.id}.description`),
       }))
       .sort((a, b) =>  a.order - b.order)

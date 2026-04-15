@@ -95,6 +95,34 @@
               </div>
             </div>
 
+            <div v-if="project.highlights?.length" class="mt-4">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="highlight in project.highlights"
+                  :key="highlight"
+                  class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium
+                         bg-green-500/10 text-green-700 dark:text-green-400"
+                >
+                  <Icon name="heroicons:check-circle" class="text-sm" />
+                  {{ highlight }}
+                </span>
+              </div>
+            </div>
+
+            <div v-if="project.patterns?.length" class="mt-3">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="pattern in project.patterns"
+                  :key="pattern"
+                  class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium
+                         bg-violet-500/10 text-violet-700 dark:text-violet-400"
+                >
+                  <Icon name="heroicons:cube" class="text-sm" />
+                  {{ pattern }}
+                </span>
+              </div>
+            </div>
+
             <div class="flex mt-5 justify-end">
               <Button
                 v-if="project.url"

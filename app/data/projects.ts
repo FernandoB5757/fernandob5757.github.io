@@ -21,6 +21,8 @@ export const projects: Project[] = [
         'redis',
         'meilisearch'
       ],
+    highlights: ['CRM con gestión de leads encriptados', 'Multi-sitio dinámico por dominio', 'Búsqueda con Meilisearch', 'Sistema de roles multi-nivel'],
+    patterns: ['Repository Pattern', 'Decorator Pattern', 'DTO', 'Value Object'],
     date: {
       start: '2024-04',
       end: '2025-04',
@@ -49,6 +51,8 @@ export const projects: Project[] = [
         'alpinejs',
         'filament',
       ],
+    highlights: ['Integración directa con SAP vía XML', 'Checkout completo con Mercado Pago', 'Paquetería propia para carrito', 'E-commerce a medida'],
+    patterns: ['Service Layer', 'Package Architecture'],
     date: {
       start: '2024-04',
       end: '2025-04',
@@ -77,6 +81,8 @@ export const projects: Project[] = [
         'alpinejs',
         'filament'
       ],
+    highlights: ['Conexión con Oracle vía APIs', 'Liderazgo de equipo', 'Deploys a entornos de pruebas', 'Reuniones directas con cliente'],
+    patterns: ['Strategy Pattern'],
     date: {
       start: '2024-08',
       isCurrent: true
@@ -103,6 +109,8 @@ export const projects: Project[] = [
         'alpinejs',
         'tailwindcss'
       ],
+    highlights: ['Monitoreo de paneles fotovoltaicos UDG', 'Gráficas dinámicas con Chart.js', 'Procesamiento de archivos CFE', 'Reportes de ahorro energético'],
+    patterns: ['API Integration', 'Data Processing'],
     date: {
       start: '2022-11',
       end: '2023-04'
@@ -125,6 +133,7 @@ export const projects: Project[] = [
         '.NET Desktop',
         'C#'
       ],
+    highlights: ['App de escritorio desde cero', 'Punto de venta completo', 'Control de stock', 'Relación autopartes-vehículos'],
     date: {
       start: '2021-06',
       end: '2023-08'
@@ -134,45 +143,30 @@ export const projects: Project[] = [
     }
   },
 
-  // {
-  //   id: 'callcenter',
-  //   image: {
-  //     src: '/images/projects/solarudg.webp',
-  //     alt: 'menu jb_refacciones',
-  //     width: 1200,
-  //     height: 630
-  //   },
-  //   simple: true,
-  //   technologies: [
-  //       '.NET',
-  //       '.NET Desktop',
-  //       'C#'
-  //     ],
-  //   date: {
-  //     start: '2021-06',
-  //     end: '2023-08'
-  //   },
-  //   meta: {
-  //     keywords: []
-  //   }
-  // },
+  {
+    id: 'portfolio',
+    image: {
+      src: '/images/projects/portfolio.webp',
+      alt: 'portfolio fernando barajas',
+      width: 1200,
+      height: 630
+    },
+    url: 'https://fernandobg.com',
+    technologies: [
+        'nuxt',
+        'vuejs',
+        'typescript',
+        'tailwindcss',
+    ],
+    highlights: ['SSR + Static Generation', 'i18n bilingüe (ES/EN)', 'Dark mode', 'CI/CD GitHub Actions', 'SEO con JSON-LD'],
+    patterns: ['Composables', 'Auto-imports', 'Lazy Hydration'],
+    date: {
+      start: '2025-01',
+      isCurrent: true
+    },
+    meta: {
+      keywords: ['nuxt', 'vue', 'portfolio', 'tailwindcss', 'ssr', 'github-pages']
+    }
+  },
 
-  // {
-  //   id: 'insumos',
-  //   image: {
-  //     src: '/images/projects/solarudg.webp',
-  //     alt: 'menu jb_refacciones',
-  //     width: 1200,
-  //     height: 630
-  //   },
-  //   simple: true,
-  //   technologies: [],
-  //   date: {
-  //     start: '2021-06',
-  //     end: '2023-08'
-  //   },
-  //   meta: {
-  //     keywords: []
-  //   }
-  // },
 ] as const

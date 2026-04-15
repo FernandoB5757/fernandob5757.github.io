@@ -23,18 +23,12 @@
                     </div>
                 </div>
 
-                <!-- <div id="my-contributions-projects" class="w-full relative">
-                    <ClientOnly>
-                        <AnimatedTestimonials :testimonials="minorContributions" />
-                    </ClientOnly>
-                </div> -->
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-// import AnimatedTestimonials from '../animations/AnimatedTestimonials.vue';
 import { useProjects } from '~/composables/useProjects';
 import ProjectList from '../projects/ProjectList.vue';
 

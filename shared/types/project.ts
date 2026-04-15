@@ -13,6 +13,8 @@ export interface Project {
     end?: string
     isCurrent?: boolean
   }
+  highlights?: string[]
+  patterns?: string[]
   // SEO Metadata
   meta?: {
     keywords?: string[]

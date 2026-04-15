@@ -2,7 +2,6 @@
     "home": "Inicio",
     "about": "Acerca de",
     "aboutme": "Acerca de mí",
-    "blog": "Blog",
     "contact": "Contacto",
     "login": "Iniciar sesión",
     "register": "Registrarse",
@@ -23,7 +22,10 @@
     "Coming soon" : "Próximamente",
     "Send": "Enviar",
     "changelang": "Cambiar idioma",
+    "view_my_work": "Ver mi trabajo",
+    "download_cv": "Descargar CV",
     "portfolio" : "Portafolio",
+    "open_to_opportunities": "Abierto a nuevas oportunidades y proyectos freelance",
     "contactme":{
       "title": "¿Quieres conocerme?",
       "label": "Tu mensaje",
@@ -36,6 +38,13 @@
       "present" : "Presente"
     },
     "aboutme_content": "Ingeniero en Informática egresado del CUCEI, Universidad de Guadalajara, con una sólida formación técnica y experiencia profesional en el Desarrollo Web.\nMi enfoque está en construir soluciones limpias, escalables y orientadas a negocio utilizando tecnologías modernas y guiándome por una filosofía clara de trabajo:",
+    "aboutme_values_title": "Lo que me define",
+    "aboutme_values": {
+        "solutions": "Orientado a soluciones",
+        "learning": "Aprendizaje continuo",
+        "leadership": "Liderazgo técnico",
+        "quality": "Código limpio y mantenible"
+    },
     "dont_be_a_coder": "No seas un codificador, sé un programador",
     "projects" : {
       "header" : "Mi Portafolio",
@@ -73,7 +82,8 @@
         "portfolio": {
           "title": "Mi Portafolio",
           "description": "Sitio personal para mostrar mis proyectos y habilidades",
-          "contribution": "Diseño y desarrollo completo con Nuxt 3 y Tailwind CSS"
+          "long_description": "Portafolio personal desarrollado con Nuxt 3, implementando SSR y generación estática para GitHub Pages. Incluye internacionalización completa (español e inglés), modo oscuro, animaciones personalizadas con motion-v, optimización de imágenes con NuxtImage, SEO avanzado con JSON-LD y Open Graph, y un sistema de componentes reutilizables.\n\nEl sitio utiliza TailwindCSS con PrimeVue para la interfaz, Inspira UI para animaciones avanzadas, y se despliega automáticamente mediante GitHub Actions.",
+          "contribution": "Diseño y desarrollo completo. Arquitectura de componentes, sistema de animaciones custom, configuración de CI/CD, optimización de rendimiento y SEO."
         },
         "callcenter": {
           "title": "Honda Call center",
@@ -86,21 +96,31 @@
           "long_description": "Sitio para equipo de callcenter y manejo de leads."
         }
     },
+    "stats": {
+        "years": "Años de experiencia",
+        "projects": "Proyectos entregados",
+        "technologies": "Tecnologías",
+        "companies": "Empresas"
+    },
     "experiences" : {
         "header": "Mi Experiencia",
         "sub_header": "Más de 4 años De Experiencia",
         "university": {
             "title": "CUCEI - Ingeniería Informática",
+            "role": "Estudiante de Ingeniería en Informática",
             "description": "Graduado de la carrera de informática.\n CUCEI es la Universidad de Guadalajara, una de las instituciones educativas más importantes de México. \n\n Durante mi tiempo en CUCEI, adquirí una sólida base en programación, bases de datos, y desarrollo de software, lo que me permitió desarrollar habilidades técnicas y analíticas esenciales para mi carrera como desarrollador de software."
         },
         "mtsoftech": {
+            "role": "Desarrollador Web Jr.",
             "description": "Mi primer trabajo como desarrollador web, donde aprendí mucho sobre el desarrollo de software y la importancia de la colaboración en equipo.\n\n De este lugar me lleve mis primeras experiencias laborales y un gran aprendizaje."
         },
         "cucei": {
             "title": "Área de Desarrollo CUCEI",
+            "role": "Practicante / Becario de Desarrollo",
             "description": "Inicie con mis prácticas y continúe como becario un ambiente muy amigable y colaborativo. \n\n En este lugar aprendí mucho sobre desarrollo web, desarrollé mis habilidades de trabajo en equipo, además del desarrollo de código limpio y mantenibles. Un equipo impresionante y cálido, me llevé amistades y un gran aprendizaje."
         },
         "netcommerce": {
+            "role": "Desarrollador Web Full Stack",
             "description": "Netcommerce es una agencia de marketing digital con más de 26 años de experiencia, especializados en diseño y desarrollo web, pioneros del comercio electrónico en México y expertos en redes sociales. \n\n En Netcommerce, he desarrollado muchas habilidades blandas como técnicas, desde el desarrollo de aplicaciones web legacy hasta aplicaciones desde sus inicios, además de aprender infinidad de habilidades técnicas enfocadas en desarrollo web, mejoré mis habilidades como líder, como equipo, inclusive como amigo, y he tenido la oportunidad de trabajar con un equipo increíble y talentoso."
         }
     },
@@ -113,6 +133,17 @@
     "seo": {
       "description": "Fernando Barajas - Ingeniero de Software y Desarrollador Web Full Stack. Portafolio profesional con proyectos en Laravel, Vue.js, Nuxt, PHP y TypeScript. Especializado en soluciones web escalables y e-commerce.",
       "keywords": "Fernando Barajas, ingeniero de software, desarrollador web, full stack developer, Laravel, PHP, Vue.js, Nuxt, TypeScript, JavaScript, portafolio, Guadalajara, México, desarrollo web, e-commerce"
+    },
+    "footer": {
+        "made_with": "Hecho con",
+        "and": "y",
+        "source_code": "Ver código fuente",
+        "rights": "Todos los derechos reservados"
+    },
+    "blog": {
+        "title": "Blog",
+        "coming_soon": "Próximamente",
+        "coming_soon_desc": "Estoy preparando contenido técnico sobre desarrollo web, arquitectura de software y mis experiencias como desarrollador."
     },
     "accessibility": {
       "gotohome" : "ir al inicio",

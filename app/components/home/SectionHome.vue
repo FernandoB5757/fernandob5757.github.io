@@ -64,6 +64,32 @@
                                         />
                                     </h1>
                                 </div>
+
+                                <div class="flex flex-wrap gap-3 mt-6">
+                                    <Button
+                                        as="a"
+                                        href="#my-portfolio"
+                                        severity="primary"
+                                        raised
+                                        class="font-semibold"
+                                    >
+                                        <Icon name="heroicons:briefcase" class="mr-1" />
+                                        {{ $t('view_my_work') }}
+                                    </Button>
+                                    <Button
+                                        as="a"
+                                        href="/cv/fernando-barajas-cv.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        severity="secondary"
+                                        variant="outlined"
+                                        raised
+                                        class="font-semibold"
+                                    >
+                                        <Icon name="heroicons:arrow-down-tray" class="mr-1" />
+                                        {{ $t('download_cv') }}
+                                    </Button>
+                                </div>
                             </AnimationsBlurReveal>
                         </div>
                     </div>
