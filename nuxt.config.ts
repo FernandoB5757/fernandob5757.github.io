@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import Theme from './themes/default'
 declare const process: { env: Record<string, string | undefined> }
 
 export default defineNuxtConfig({
@@ -14,6 +15,7 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxtjs/tailwindcss',
+    '@primevue/nuxt-module',
     '@nuxtjs/color-mode',
     '@nuxt/icon',
     '@nuxtjs/i18n',
@@ -43,8 +45,55 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     baseUrl: process.env.APP_URL || 'https://fernandobg.com',
   },
+  primevue: {
+    autoImport: false,
+    components: {
+      include: [
+        'Button',
+        'Avatar',
+        'Textarea',
+        'Tag',
+        'Image',
+        'Floatlabel',
+        'Drawer',
+        'Forms',
+        'Dialog',
+        'ScrollTop'
+      ]
+    },
+    directives: {
+      include: [
+        'Button',
+        'Avatar',
+        'Textarea',
+        'Tag',
+        'Image',
+        'Floatlabel',
+        'Drawer',
+        'Forms',
+        'Dialog',
+        'ScrollTop'
+      ]
+    },
+    options: {
+      theme: {
+        preset: Theme,
+        options: {
+          darkModeSelector: '.dark-mode',
+          cssLayer: {
+            name: 'primevue',
+            order: 'tailwind-base, primevue, tailwind-utilities'
+          }
+        }
+      },
+      ripple: true,
+    },
+  },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+  },
   colorMode: {
-
+    classSuffix: '-mode',
   },
   image: {
     format: ['webp'],
