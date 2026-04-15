@@ -1,6 +1,6 @@
 
-import { Technology } from "./technology"
-import { Image } from "./index"
+import type { Technology } from "./technology"
+import type { Image } from "./index"
 
 export interface Project {
   id: string
