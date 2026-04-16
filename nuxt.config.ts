@@ -1,8 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import Theme from "./themes/default"
+import Theme from './themes/default'
+declare const process: { env: Record<string, string | undefined> }
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2025-07-14',
   devtools: { enabled: true },
   ssr: true,
   typescript: {
@@ -22,6 +23,11 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/sitemap',
   ],
+  fonts: {
+    defaults: {
+      subsets: ['latin'],
+    },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -29,6 +35,20 @@ export default defineNuxtConfig({
         class: 'scroll-smooth',
       },
     },
+  },
+  site: {
+    url: process.env.APP_URL || 'https://fernandobg.com',
+    name: 'Fernando Barajas | Software Engineer Portfolio',
+  },
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    locales: [
+      { code: 'es', language: 'es-MX', file: 'es.json' },
+      { code: 'en', language: 'en-US', file: 'en.json' }
+    ],
+    defaultLocale: 'es',
+    strategy: 'prefix_except_default',
+    baseUrl: process.env.APP_URL || 'https://fernandobg.com',
   },
   primevue: {
     autoImport: false,
@@ -43,11 +63,12 @@ export default defineNuxtConfig({
         'Drawer',
         'Forms',
         'Dialog',
-        'ScrollTop'
+        'ScrollTop',
+        'InputText'
       ]
     },
     directives: {
-       include: [
+      include: [
         'Button',
         'Avatar',
         'Textarea',
@@ -57,7 +78,8 @@ export default defineNuxtConfig({
         'Drawer',
         'Forms',
         'Dialog',
-        'ScrollTop'
+        'ScrollTop',
+        'InputText'
       ]
     },
     options: {
@@ -74,30 +96,18 @@ export default defineNuxtConfig({
       ripple: true,
     },
   },
-  site: {
-    url: process.env.APP_URL || 'https://fernandobg.com',
-    name: 'Fernando Barajas | Software Engineer Portfolio',
-  },
-  i18n: {
-    vueI18n: './i18n.config.ts',
-    locales: [
-      { code: 'es', language: 'es-MX', file: 'es.json' },
-      { code: 'en', language: 'en-US', file: 'en.json' }
-    ],
-    defaultLocale: 'es',
-    strategy: 'prefix_except_default',
-    baseUrl: process.env.APP_URL || 'https://fernandobg.com',
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
   },
   colorMode: {
-
+    classSuffix: '-mode',
+  },
+  icon: {
+    serverBundle: 'auto',
   },
   image: {
     format: ['webp'],
     provider: 'ipx',
-    isLocal: false,
   },
   runtimeConfig: {
     serverToken: process.env.SERVER_TOKEN,
@@ -107,6 +117,12 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
+    routeRules: {
+      '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+      '/_fonts/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+      '/images/**': { headers: { 'Cache-Control': 'public, max-age=2592000, s-maxage=2592000' } },
+      '/_ipx/**': { headers: { 'Cache-Control': 'public, max-age=2592000, s-maxage=2592000' } },
+    },
     prerender: {
       failOnError: false,
       routes: [
@@ -123,34 +139,26 @@ export default defineNuxtConfig({
         '/_ipx/f_webp&s_64x64/images/me-sm.webp',
         '/_ipx/f_webp&s_128x128/images/me-sm.webp',
 
-        '/_ipx/f_webp&s_128x128/images/me-sm.webp',
-
-        '/_ipx/w_320&f_webp/images/me-md.webp',
-        '/_ipx/w_640&f_webp/images/me-md.webp',
-        '/_ipx/w_768&f_webp/images/me-md.webp',
-        '/_ipx/w_1024&f_webp/images/me-md.webp',
-        '/_ipx/w_1280&f_webp/images/me-md.webp',
-        '/_ipx/w_1536&f_webp/images/me-md.webp',
-        '/_ipx/w_2048&f_webp/images/me-md.webp',
-        '/_ipx/w_2560&f_webp/images/me-md.webp',
-        '/_ipx/w_3072&f_webp/images/me-md.webp',
-
-
         '/_ipx/f_webp/images/projects/ekar.webp',
-        '/_ipx/f_webp/images/projects/ekar.webp',
-
         '/_ipx/f_webp/images/projects/jb_refacciones.webp',
-        '/_ipx/f_webp/images/projects/jb_refacciones.webp',
-        
         '/_ipx/f_webp/images/projects/mimo.webp',
-        '/_ipx/f_webp/images/projects/mimo.webp',
-
         '/_ipx/f_webp/images/projects/solarudg.webp',
-        '/_ipx/f_webp/images/projects/solarudg.webp',
-
         '/_ipx/f_webp/images/projects/tubin.webp',
-        '/_ipx/f_webp/images/projects/tubin.webp'
+        '/_ipx/f_webp/images/projects/portfolio.jpg',
 
+        '/_ipx/f_webp/images/projects/ekar_thumb.webp',
+        '/_ipx/f_webp/images/projects/jb_refacciones_thumb.webp',
+        '/_ipx/f_webp/images/projects/mimo_thumb.webp',
+        '/_ipx/f_webp/images/projects/solarudg_thumb.webp',
+        '/_ipx/f_webp/images/projects/tubin_thumb.webp',
+        '/_ipx/f_webp/images/projects/portfolio_thumb.webp',
+
+        '/_ipx/w_800&f_webp/images/me-xl.png',
+
+        '/_ipx/f_webp/images/experiences/udg.webp',
+        '/_ipx/f_webp/images/experiences/mt-logo.webp',
+        '/_ipx/f_webp/images/experiences/cucei.webp',
+        '/_ipx/f_webp/images/experiences/netcommerce.webp',
       ]
     }
   },

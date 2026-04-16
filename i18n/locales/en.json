@@ -2,7 +2,6 @@
   "home": "Home",
   "about": "About",
   "aboutme": "About Me",
-  "blog": "Blog",
   "contact": "Contact",
   "login": "Login",
   "register": "Register",
@@ -23,12 +22,20 @@
   "Coming soon": "Coming Soon",
   "Send": "Send",
   "changelang": "Change Language",
+  "view_my_work": "View my work",
+  "download_cv": "Download CV",
+  "view_cv": "View CV",
+  "cv_url": "https://drive.google.com/file/d/TU_FILE_ID_EN/preview",
   "portfolio" : "Portfolio",
+  "open_to_opportunities": "Open to new opportunities and freelance projects",
   "contactme": {
     "title": "Want to get in touch?",
     "label": "Your message",
     "content": "Hi, I'm interested in your professional profile because...",
-    "emailsubject": "FB - Contact via portfolio"
+    "emailsubject": "FB - Contact via portfolio",
+    "name": "Your name",
+    "email": "Your email",
+    "validation_required": "Please fill in all fields before sending."
   },
   "dates": {
     "start": "Start Date",
@@ -36,6 +43,13 @@
     "present": "Present"
   },
   "aboutme_content": "Computer Science Engineer graduated from CUCEI, University of Guadalajara, with strong technical background and professional experience in Web Development.\nMy focus is on building clean, scalable and business-oriented solutions using modern technologies, guided by a clear work philosophy:",
+  "aboutme_values_title": "What defines me",
+  "aboutme_values": {
+      "solutions": "Solution-oriented",
+      "learning": "Continuous learning",
+      "leadership": "Technical leadership",
+      "quality": "Clean & maintainable code"
+  },
   "dont_be_a_coder": "Don't be a coder, be a programmer",
   "projects": {
     "header" : "My Portfolio",
@@ -67,7 +81,8 @@
     "portfolio": {
       "title": "My Portfolio",
       "description": "Personal site to showcase my projects and skills",
-      "contribution": "Full design and development using Nuxt 3 and Tailwind CSS."
+      "long_description": "Personal portfolio built with Nuxt 3, implementing SSR and static generation for GitHub Pages. Features full internationalization (Spanish and English), dark mode, custom animations with motion-v, image optimization with NuxtImage, advanced SEO with JSON-LD and Open Graph, and a reusable component system.\n\nThe site uses TailwindCSS with PrimeVue for the UI, Inspira UI for advanced animations, and is automatically deployed through GitHub Actions.",
+      "contribution": "Full design and development. Component architecture, custom animation system, CI/CD configuration, performance optimization and SEO."
     },
     "jb_refacciones": {
           "title": "JB -  Auto Parts",
@@ -76,21 +91,32 @@
           "contribution": "I developed this desktop application from scratch using C#. I also prepared it to be easily installed, to the point that I installed it on two computers in the business and set up the database on the company's server. In the end, the application was not used because many new needs came up that required further updates, but for me, it was my first real experience, and I learned a lot from that project."
         }
   },
+  "stats": {
+      "title": "Stats",
+      "years": "Years of experience",
+      "projects": "Projects delivered",
+      "technologies": "Technologies",
+      "companies": "Companies"
+  },
   "experiences": {
     "header": "My Resume",
     "sub_header": "4+ Years of Experience",
     "university": {
         "title": "CUCEI - Computer Engineering",
+        "role": "Computer Engineering Student",
         "description": "Graduated with a degree in Computer Engineering.\n CUCEI is part of the University of Guadalajara, one of the most prestigious educational institutions in Mexico. \n\n During my time at CUCEI, I gained a solid foundation in programming, databases, and software development, which allowed me to develop essential technical and analytical skills for my career as a software developer."
     },
     "mtsoftech": {
+        "role": "Junior Web Developer",
         "description": "My first job as a web developer, where I learned a lot about software development and the importance of teamwork.\n\n This experience gave me my first professional lessons and valuable knowledge that helped shape my career."
     },
     "cucei": {
         "title": "CUCEI Development Department",
+        "role": "Intern / Development Scholar",
         "description": "I started here as an intern and later became a scholarship holder in a friendly and collaborative environment.\n\n During this time, I learned a lot about web development, strengthened my teamwork skills, and focused on writing clean and maintainable code. It was an incredible and warm team, where I built friendships and gained valuable experience."
     },
     "netcommerce": {
+        "role": "Full Stack Web Developer",
         "description": "Netcommerce is a digital marketing agency with over 26 years of experience, specializing in web design and development. They are pioneers of e-commerce in Mexico and experts in social media.\n\n At Netcommerce, I’ve developed both technical and soft skills, working on legacy web applications as well as projects from scratch. I’ve also improved my leadership abilities, teamwork, and even personal skills. I’ve had the opportunity to work alongside an amazing and talented team."
     }
   },
@@ -104,12 +130,30 @@
     "description": "Fernando Barajas - Software Engineer & Full Stack Web Developer. Professional portfolio showcasing projects built with Laravel, Vue.js, Nuxt, PHP and TypeScript. Specialized in scalable web solutions and e-commerce.",
     "keywords": "Fernando Barajas, software engineer, web developer, full stack developer, Laravel, PHP, Vue.js, Nuxt, TypeScript, JavaScript, portfolio, Guadalajara, Mexico, web development, e-commerce"
   },
+  "footer": {
+      "made_with": "Made with",
+      "and": "and",
+      "source_code": "View source code",
+      "rights": "All rights reserved"
+  },
+  "blog": {
+      "title": "Blog",
+      "coming_soon": "Coming Soon",
+      "coming_soon_desc": "I'm preparing technical content about web development, software architecture, and my experiences as a developer."
+  },
+  "error": {
+    "not_found": "Page not found",
+    "not_found_description": "The page you're looking for doesn't exist or has been moved.",
+    "go_home": "Go back home"
+  },
   "accessibility": {
     "gotohome" : "go to Home",
     "changetheme" : "change of theme",
     "submitform" : "submit form",
     "closemodal" : "close modal",
     "viewproject": "viewproject",
-    "gotomy": "go to my"
+    "gotomy": "go to my",
+    "main_navigation": "Main navigation",
+    "skip_to_content": "Skip to content"
   }
 }
