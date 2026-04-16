@@ -76,7 +76,7 @@
                                         <Icon name="heroicons:briefcase" class="mr-1" />
                                         {{ $t('view_my_work') }}
                                     </Button>
-                                    <Button
+                                    <!-- <Button
                                         as="a"
                                         :href="$t('cv_url')"
                                         target="_blank"
@@ -88,7 +88,7 @@
                                     >
                                         <Icon name="heroicons:eye" class="mr-1" />
                                         {{ $t('view_cv') }}
-                                    </Button>
+                                    </Button> -->
                                 </div>
                             </AnimationsBlurReveal>
                         </div>
