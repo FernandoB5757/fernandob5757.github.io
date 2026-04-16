@@ -32,6 +32,8 @@
                 <template #image>
                     <NuxtImg :src="project.image.src"
                       format="webp"
+                      :width="project.image.width"
+                      :height="project.image.height"
                       class="details-image"
                       loading="lazy"
                       fetch-priority="low"
@@ -246,7 +248,7 @@ const formatDate = (dateString: string) => {
 }
 
 .details-image {
-  @apply object-fill rounded-lg;
+  @apply object-cover rounded-lg;
 }
 
 .details-meta {

@@ -10,7 +10,7 @@
             sizes="sm:280px md:300px lg:350px"
             quality="75"
             :alt="project.image.alt"
-            class="group-hover:scale-110 transition ease-in-out delay-150 duration-300 rounded-lg cursor-pointer"
+            class="group-hover:scale-110 transition ease-in-out delay-150 duration-300 rounded-lg cursor-pointer object-cover w-full h-full"
             loading="lazy"
             role="button"
             tabindex="0"

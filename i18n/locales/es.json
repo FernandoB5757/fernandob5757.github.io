@@ -30,7 +30,10 @@
       "title": "¿Quieres conocerme?",
       "label": "Tu mensaje",
       "content": "Hola, tengo interés en tu perfil profesional porque...",
-      "emailsubject": "FB - Contact via portafolio"
+      "emailsubject": "FB - Contact via portafolio",
+      "name": "Tu nombre",
+      "email": "Tu email",
+      "validation_required": "Por favor llena todos los campos antes de enviar."
     },
     "dates": {
       "start" : "Fecha Inicio",

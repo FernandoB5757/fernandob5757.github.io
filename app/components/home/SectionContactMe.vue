@@ -20,14 +20,30 @@
                     </span>
                     {{ $t('open_to_opportunities') }}
                 </p>
-                <FloatLabel class="w-full mt-4">
-                    <Textarea id="message" v-model="body" rows="10" cols="30" class="resize-none w-full" required />
+                <div class="flex flex-col sm:flex-row gap-3 mt-2">
+                    <FloatLabel class="w-full">
+                        <InputText id="contact-name" v-model="name" class="w-full" />
+                        <label for="contact-name">{{ $t('contactme.name') }}</label>
+                    </FloatLabel>
+                    <FloatLabel class="w-full">
+                        <InputText id="contact-email" v-model="email" type="email" class="w-full" />
+                        <label for="contact-email">{{ $t('contactme.email') }}</label>
+                    </FloatLabel>
+                </div>
+                <FloatLabel class="w-full mt-8">
+                    <Textarea id="message" v-model="body" rows="8" cols="30" class="resize-none w-full" required />
                     <label for="message">{{ $t('contactme.label') }}:</label>
                 </FloatLabel>
+                <p v-if="showValidation" class="text-sm text-red-500 mt-2">
+                    {{ $t('contactme.validation_required') }}
+                </p>
                 <div class="w-full flex items-center justify-between mt-4">
                     <SocialLinks />
-                    <Button as="a" :href="mailto" role="button" :aria-label="$t('accessibility.submitform')"
-                        class="text-primary-100 dark:text-white">
+                    <Button as="a" :href="isValid ? mailto : undefined" role="button"
+                        :aria-label="$t('accessibility.submitform')"
+                        class="text-primary-100 dark:text-white"
+                        @click="handleSend">
+                        <Icon name="heroicons:paper-airplane" class="mr-1" />
                         {{ $t('Send') }}
                     </Button>
                 </div>
@@ -39,16 +55,28 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
+const name = ref('')
+const email = ref('')
 const body = ref(t('contactme.content'))
+const showValidation = ref(false)
+
+const isValid = computed(() => name.value.trim() !== '' && email.value.trim() !== '' && body.value.trim() !== '')
 
 const mailto = computed(() => {
-    const mailto = 'mailto'
-    const email = 'me@fernandobg.com'
+    const target = 'mailto'
+    const toEmail = 'me@fernandobg.com'
     const subject = t('contactme.emailsubject')
+    const fullBody = `${body.value}\n\n---\n${name.value}\n${email.value}`
 
-    return `${mailto}:${email}?` + encodeURI(`subject=${subject}&body=${body.value}`)
+    return `${target}:${toEmail}?` + encodeURI(`subject=${subject}&body=${fullBody}`)
 })
 
+function handleSend(e: Event) {
+    if (!isValid.value) {
+        e.preventDefault()
+        showValidation.value = true
+    }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -146,7 +146,7 @@ export const projects: Project[] = [
   {
     id: 'portfolio',
     image: {
-      src: '/images/projects/portfolio.webp',
+      src: '/images/projects/portfolio.jpg',
       alt: 'portfolio fernando barajas',
       width: 1200,
       height: 630

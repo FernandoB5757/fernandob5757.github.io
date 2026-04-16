@@ -63,7 +63,8 @@ export default defineNuxtConfig({
         'Drawer',
         'Forms',
         'Dialog',
-        'ScrollTop'
+        'ScrollTop',
+        'InputText'
       ]
     },
     directives: {
@@ -77,7 +78,8 @@ export default defineNuxtConfig({
         'Drawer',
         'Forms',
         'Dialog',
-        'ScrollTop'
+        'ScrollTop',
+        'InputText'
       ]
     },
     options: {

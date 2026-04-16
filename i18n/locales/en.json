@@ -30,7 +30,10 @@
     "title": "Want to get in touch?",
     "label": "Your message",
     "content": "Hi, I'm interested in your professional profile because...",
-    "emailsubject": "FB - Contact via portfolio"
+    "emailsubject": "FB - Contact via portfolio",
+    "name": "Your name",
+    "email": "Your email",
+    "validation_required": "Please fill in all fields before sending."
   },
   "dates": {
     "start": "Start Date",
