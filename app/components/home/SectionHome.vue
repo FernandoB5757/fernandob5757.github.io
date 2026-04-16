@@ -9,7 +9,7 @@
                             rounded
                             shadow-2xl dark:shadow-primary-50/50 shadow-primary-500/50 "></div>
                         </div>
-                        <Image src="/images/me-xl.webp"  :pt:preview-mask:class="'lw-full bg-transparent'">
+                        <Image src="/images/me-xl.png"  :pt:preview-mask:class="'lw-full bg-transparent'">
                             <template #image>
                                 <NuxtImg src="/images/me-md.webp"
                                     preload
@@ -23,7 +23,7 @@
                                 />
                             </template>
                             <template #original="slotProps">
-                                <NuxtImg src="/images/me-xl.webp"
+                                <NuxtImg src="/images/me-xl.png"
                                     format="webp"
                                     width="800"
                                     height="800"
@@ -78,7 +78,7 @@
                                     </Button>
                                     <Button
                                         as="a"
-                                        href="/cv/fernando-barajas-cv.pdf"
+                                        :href="$t('cv_url')"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         severity="secondary"
@@ -86,8 +86,8 @@
                                         raised
                                         class="font-semibold"
                                     >
-                                        <Icon name="heroicons:arrow-down-tray" class="mr-1" />
-                                        {{ $t('download_cv') }}
+                                        <Icon name="heroicons:eye" class="mr-1" />
+                                        {{ $t('view_cv') }}
                                     </Button>
                                 </div>
                             </AnimationsBlurReveal>

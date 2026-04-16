@@ -91,7 +91,7 @@
                       :key="techId"
                       :value="techId"
                       rounded
-                      class="bg-primary-500/10 text-primary-600 dar:bg-primary-800/10 dark:text-primary-800"
+                      class="bg-primary-500/10 text-primary-600 dark:bg-primary-800/10 dark:text-primary-800"
                   ></Tag>
 
               </div>
@@ -177,7 +177,7 @@
                     :key="keyword"
                     :value="keyword"
                     rounded
-                    class="bg-cyan-500/10 text-cyan-600 dar:bg-cyan-800/10 dark:text-cyan-800 hover:bg-cyan-500/5"
+                    class="bg-cyan-500/10 text-cyan-600 dark:bg-cyan-800/10 dark:text-cyan-800 hover:bg-cyan-500/5"
                 ></Tag>
           </div>
         </div>

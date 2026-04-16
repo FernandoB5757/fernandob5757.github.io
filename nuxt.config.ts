@@ -144,7 +144,7 @@ export default defineNuxtConfig({
         '/_ipx/f_webp/images/projects/mimo.webp',
         '/_ipx/f_webp/images/projects/solarudg.webp',
         '/_ipx/f_webp/images/projects/tubin.webp',
-        '/_ipx/f_webp/images/projects/portfolio.webp',
+        '/_ipx/f_webp/images/projects/portfolio.jpg',
 
         '/_ipx/f_webp/images/projects/ekar_thumb.webp',
         '/_ipx/f_webp/images/projects/jb_refacciones_thumb.webp',
@@ -152,6 +152,13 @@ export default defineNuxtConfig({
         '/_ipx/f_webp/images/projects/solarudg_thumb.webp',
         '/_ipx/f_webp/images/projects/tubin_thumb.webp',
         '/_ipx/f_webp/images/projects/portfolio_thumb.webp',
+
+        '/_ipx/w_800&f_webp/images/me-xl.png',
+
+        '/_ipx/f_webp/images/experiences/udg.webp',
+        '/_ipx/f_webp/images/experiences/mt-logo.webp',
+        '/_ipx/f_webp/images/experiences/cucei.webp',
+        '/_ipx/f_webp/images/experiences/netcommerce.webp',
       ]
     }
   },

@@ -7,6 +7,7 @@
         </a>
         <div
             class="fixed top-0 left-0 h-[3px] bg-primary-500 z-50 transition-[width] duration-100"
+            :style="{ width: scrollProgress + '%' }"
             role="progressbar"
             :aria-valuenow="Math.round(scrollProgress)"
             aria-valuemin="0"
