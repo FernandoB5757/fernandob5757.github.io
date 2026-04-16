@@ -104,6 +104,24 @@ export default defineNuxtConfig({
   },
   icon: {
     serverBundle: 'auto',
+    provider: 'iconify',
+    clientBundle: {
+      scan: true,
+      icons: [
+        // useTheme.ts
+        'heroicons:computer-desktop',
+        'heroicons:sun',
+        'heroicons:moon',
+        // LangSwitch.client.vue
+        'circle-flags:mx',
+        'circle-flags:us-um',
+        // SectionStats.vue
+        'heroicons:calendar-days',
+        'heroicons:rocket-launch',
+        'heroicons:code-bracket',
+        'heroicons:building-office-2',
+      ],
+    },
   },
   image: {
     format: ['webp'],

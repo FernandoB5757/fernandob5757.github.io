@@ -32,24 +32,15 @@
                 <template #image>
                     <NuxtImg :src="project.image.src"
                       format="webp"
-                      :width="project.image.width"
-                      :height="project.image.height"
                       class="details-image"
                       loading="lazy"
                       fetch-priority="low"
                     />
                 </template>
                  <template #preview="slotProps">
-                    <NuxtImg :src="project.image.src"
-                        format="webp"
-                        :img-attrs="{
-                                style: slotProps.style,
-                                width: 1280,
-                                height: 720,
-                                loading: 'lazy',
-                                'fetch-priority': 'low'
-                            }"
-                      />
+                    <img :src="project.image.src"
+                        :style="slotProps.style"
+                    />
                   </template>
             </Image>
           </div>
