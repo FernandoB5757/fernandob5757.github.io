@@ -1,6 +1,7 @@
 <template>
   <section class="py-16 relative">
     <div class="container mx-auto px-5">
+      <h2 class="sr-only">{{ $t('stats.title') ?? 'Stats' }}</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
         <div
           v-for="stat in stats"
@@ -44,24 +45,33 @@ const stats = [
   { key: 'companies', value: 3, suffix: '+', prefix: '', icon: 'heroicons:building-office-2' },
 ]
 
+const prefersReducedMotion = () =>
+  import.meta.client && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 const animateCounters = () => {
   if (hasAnimated.value) return
   hasAnimated.value = true
 
+  if (prefersReducedMotion()) {
+    stats.forEach(stat => { animatedValues[stat.key] = stat.value })
+    return
+  }
+
   stats.forEach((stat) => {
     const duration = 1500
-    const steps = 40
-    const increment = stat.value / steps
-    let current = 0
-    const interval = setInterval(() => {
-      current += increment
-      if (current >= stat.value) {
-        animatedValues[stat.key] = stat.value
-        clearInterval(interval)
+    const start = performance.now()
+
+    const step = (now: number) => {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      animatedValues[stat.key] = Math.floor(progress * stat.value)
+      if (progress < 1) {
+        requestAnimationFrame(step)
       } else {
-        animatedValues[stat.key] = Math.floor(current)
+        animatedValues[stat.key] = stat.value
       }
-    }, duration / steps)
+    }
+    requestAnimationFrame(step)
   })
 }
 

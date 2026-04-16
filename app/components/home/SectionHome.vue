@@ -99,7 +99,7 @@
                                 <span class="text-sm tracking-wide uppercase">
                                     {{ $t('findme') }}
                                 </span>
-                                <div class="flex flex-row gap-1 sm:gap-3 uppercase">
+                                <div class="flex flex-row gap-2 sm:gap-3 uppercase">
                                     <LazyAnimationsCardSpotlight
                                         v-for="(socialLink, key) in socialLinks"
                                         :key="key"
@@ -126,7 +126,7 @@
                                 <span class="text-sm tracking-wide uppercase">
                                     {{ $t('bestskills') }}
                                 </span>
-                                <div class="flex flex-row gap-1 sm:gap-3">
+                                <div class="flex flex-row gap-2 sm:gap-3">
                                     <LazyAnimationsCardSpotlight
                                         v-for="(skills, key) in bestSkills"
                                         :key="key"
@@ -139,6 +139,8 @@
                                     >
                                         <Icon :name="skills.icon"
                                             class="dark:text-surface-400 text-surface-500 hover:text-primary text-4xl"
+                                            :aria-label="skills.name"
+                                            role="img"
                                         />
                                     </LazyAnimationsCardSpotlight>
                                 </div>
@@ -179,10 +181,10 @@ const { isDark } = useTheme();
 }
 
 .background-container {
-    @apply relative h-[890px] md:h-[800px];
+    @apply relative min-h-[850px] md:min-h-[750px];
 }
 
 .content-layer {
-    @apply absolute z-10 h-[900px] md:h-[700px] w-full;
+    @apply absolute z-10 min-h-[850px] md:min-h-[700px] w-full;
 }
 </style>

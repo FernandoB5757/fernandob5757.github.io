@@ -24,7 +24,7 @@
             {{ $t('phrases.'+ randomFloat) }}
         </p>
         <div class="border-b border-gray-300 dark:border-gray-500 mt-3"></div>
-        <AppMenu/>
+        <AppMenu @navigate="showMenu = false" />
         <template #footer >
             <div class="flex justify-center gap-2">
                 <LangSwitch size="large"></LangSwitch>

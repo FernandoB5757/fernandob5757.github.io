@@ -62,7 +62,7 @@
       </div>
 
       <div :style="{
-              height: props.height + 'px',
+              height: computedHeight + 'px',
             }"
         class="absolute w-full top-0 flex justify-start xl:justify-center"
       >
@@ -101,11 +101,18 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
-  height: 2000
+  height: 0
 });
 
 const timelineContainerRef = ref<HTMLElement | null>(null);
 const timelineRef = ref<HTMLElement | null>(null);
+const computedHeight = ref(props.height || 2000);
+
+onMounted(() => {
+  if (timelineRef.value) {
+    computedHeight.value = props.height || timelineRef.value.scrollHeight
+  }
+})
 
 const { scrollYProgress } = useScroll({
   target: timelineRef,
@@ -113,7 +120,7 @@ const { scrollYProgress } = useScroll({
 });
 
 const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-const heightTransform = useTransform(scrollYProgress, [0, 1], [0, props.height + 200]);
+const heightTransform = useTransform(scrollYProgress, [0, 1], [0, computedHeight.value + 200]);
 </script>
 
 <style lang="scss" scoped>

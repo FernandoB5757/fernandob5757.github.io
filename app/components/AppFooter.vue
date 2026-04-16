@@ -24,34 +24,11 @@
                     </a>
                 </div>
 
-                <div class="flex items-center gap-6 mb-6">
-                    <a href="https://github.com/FernandoB5757"
-                        class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        :aria-label="$t('accessibility.gotomy') + ' github'"
-                    >
-                        <Icon name="fa6-brands:github" class="text-xl" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/jes%C3%BAs-fernando-barajas-galindo-965149285/"
-                        class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        :aria-label="$t('accessibility.gotomy') + ' linkedin'"
-                    >
-                        <Icon name="fa6-brands:linkedin-in" class="text-xl" />
-                    </a>
-                    <a href="mailto:me@fernandobg.com"
-                        class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                        :aria-label="$t('accessibility.gotomy') + ' email'"
-                    >
-                        <Icon name="heroicons:envelope" class="text-xl" />
-                    </a>
-                </div>
+                <SocialLinks class="mb-6" />
 
                 <div class="flex flex-col items-center gap-2 text-xs text-gray-400 dark:text-gray-500">
                     <p>
-                        {{ $t('footer.made_with') }} <span class="text-primary">Nuxt 3</span>
+                        {{ $t('footer.made_with') }} <span class="text-primary">Nuxt 4</span>
                         {{ $t('footer.and') }} <span class="text-primary">TailwindCSS</span>
                         &mdash;
                         <a href="https://github.com/FernandoB5757/fernandob5757.github.io"

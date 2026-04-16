@@ -64,30 +64,7 @@
                 </div>
             </div>
 
-            <div class="flex items-center gap-4 mt-4">
-                <a href="https://github.com/FernandoB5757"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                    :aria-label="$t('accessibility.gotomy') + ' github'"
-                >
-                    <Icon name="fa6-brands:github" class="text-2xl" />
-                </a>
-                <a href="https://www.linkedin.com/in/jes%C3%BAs-fernando-barajas-galindo-965149285/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                    :aria-label="$t('accessibility.gotomy') + ' linkedin'"
-                >
-                    <Icon name="fa6-brands:linkedin-in" class="text-2xl" />
-                </a>
-                <a href="mailto:me@fernandobg.com"
-                    class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                    :aria-label="$t('accessibility.gotomy') + ' email'"
-                >
-                    <Icon name="heroicons:envelope" class="text-2xl" />
-                </a>
-            </div>
+            <SocialLinks size="lg" class="mt-4" />
         </AnimationsBlurReveal>
     </div>
 </template>
@@ -95,6 +72,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent, hydrateOnIdle } from 'vue'
 import { ORBIT_DIRECTION ,type OrbitTechnology} from "@@/shared/types/orbit";
+
+const { isDark } = useTheme()
 
 const AnimationsOrbit = defineAsyncComponent({
   loader: () => import('@/components/animations/Orbit.vue'),
@@ -316,10 +295,9 @@ const AnimationsOrbit = defineAsyncComponent({
     },
   ];
 
-  let back = backTechnologies.map(function (item: OrbitTechnology) {
-    // item.icon = `https://cdn.simpleicons.org/${item.slug}/000000/C0C0C0`
-    item.icon = `https://cdn.simpleicons.org/${item.slug}/1e40af`
-    return item;
-  });
+  const back = computed(() => backTechnologies.map(function (item: OrbitTechnology) {
+    const color = isDark.value ? '60a5fa' : '1e40af'
+    return { ...item, icon: `https://cdn.simpleicons.org/${item.slug}/${color}` }
+  }));
 
 </script>

@@ -87,6 +87,7 @@
         }
   },
   "stats": {
+      "title": "Stats",
       "years": "Years of experience",
       "projects": "Projects delivered",
       "technologies": "Technologies",
@@ -135,12 +136,19 @@
       "coming_soon": "Coming Soon",
       "coming_soon_desc": "I'm preparing technical content about web development, software architecture, and my experiences as a developer."
   },
+  "error": {
+    "not_found": "Page not found",
+    "not_found_description": "The page you're looking for doesn't exist or has been moved.",
+    "go_home": "Go back home"
+  },
   "accessibility": {
     "gotohome" : "go to Home",
     "changetheme" : "change of theme",
     "submitform" : "submit form",
     "closemodal" : "close modal",
     "viewproject": "viewproject",
-    "gotomy": "go to my"
+    "gotomy": "go to my",
+    "main_navigation": "Main navigation",
+    "skip_to_content": "Skip to content"
   }
 }

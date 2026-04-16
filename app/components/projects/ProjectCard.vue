@@ -10,14 +10,18 @@
             sizes="sm:280px md:300px lg:350px"
             quality="75"
             :alt="project.image.alt"
-            class="group-hover:scale-110 transition ease-in-out delay-150 duration-300 rounded-lg"
+            class="group-hover:scale-110 transition ease-in-out delay-150 duration-300 rounded-lg cursor-pointer"
             loading="lazy"
+            role="button"
+            tabindex="0"
             @click="isOpen = true"
+            @keydown.enter="isOpen = true"
+            @keydown.space.prevent="isOpen = true"
           />
         </div>
 
         <div class="project-content">
-          <div class="project-title" @click="isOpen = true">
+          <div class="project-title" role="button" tabindex="0" @click="isOpen = true" @keydown.enter="isOpen = true" @keydown.space.prevent="isOpen = true">
             {{ project.title }}
           </div>
           <p>
@@ -29,7 +33,7 @@
               :key="techId"
               :value="techId"
               rounded
-              class="bg-primary-500/10 text-primary-600 dar:bg-primary-800/10 dark:text-primary-800"
+              class="bg-primary-500/10 text-primary-600 dark:bg-primary-800/10 dark:text-primary-800"
           ></Tag>
       </div>
     </div>
@@ -60,7 +64,7 @@ const technologies = computed(
 <style lang="scss" scoped>
 
 .project-card {
-  @apply p-7 max-w-sm h-96 border relative
+  @apply p-7 max-w-sm min-h-96 border relative
     rounded-lg shadow-lg
   bg-white hover:bg-primary-100 border-primary-200
     dark:bg-surface-900 dark:border-surface-700 dark:hover:bg-surface-950

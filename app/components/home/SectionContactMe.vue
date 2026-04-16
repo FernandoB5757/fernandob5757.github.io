@@ -25,31 +25,8 @@
                     <label for="message">{{ $t('contactme.label') }}:</label>
                 </FloatLabel>
                 <div class="w-full flex items-center justify-between mt-4">
-                    <div class="flex items-center gap-4">
-                        <a href="https://github.com/FernandoB5757"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                            :aria-label="$t('accessibility.gotomy') + ' github'"
-                        >
-                            <Icon name="fa6-brands:github" class="text-xl" />
-                        </a>
-                        <a href="https://www.linkedin.com/in/jes%C3%BAs-fernando-barajas-galindo-965149285/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                            :aria-label="$t('accessibility.gotomy') + ' linkedin'"
-                        >
-                            <Icon name="fa6-brands:linkedin-in" class="text-xl" />
-                        </a>
-                        <a href="mailto:me@fernandobg.com"
-                            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
-                            :aria-label="$t('accessibility.gotomy') + ' email'"
-                        >
-                            <Icon name="heroicons:envelope" class="text-xl" />
-                        </a>
-                    </div>
-                    <Button type="button" :href="mailto" role="button" :aria-label="$t('accessibility.submitform')"
+                    <SocialLinks />
+                    <Button as="a" :href="mailto" role="button" :aria-label="$t('accessibility.submitform')"
                         class="text-primary-100 dark:text-white">
                         {{ $t('Send') }}
                     </Button>

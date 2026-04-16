@@ -14,7 +14,6 @@
     <div class="relative w-full h-fit">
       <LazyAnimationsTimeLine
         :items="experiences"
-        :height="2500"
         hydrate-on-visible
       />
     </div>

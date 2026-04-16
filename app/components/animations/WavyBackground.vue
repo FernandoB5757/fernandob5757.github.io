@@ -69,6 +69,9 @@ import { useTheme }  from "@/composables/useTheme";
     return props.speed === "slow" ? 0.001 : 0.002;
   }
 
+  const prefersReducedMotion = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function init() {
     const canvas = canvasRef.value;
     if (canvas) {
@@ -100,6 +103,15 @@ import { useTheme }  from "@/composables/useTheme";
         document.addEventListener('visibilitychange', () => {
           isPageVisible = !document.hidden;
         });
+
+        if (prefersReducedMotion()) {
+          // Render a single static frame
+          ctx.fillStyle = canvaBackgroundFill.value!;
+          ctx.globalAlpha = props.waveOpacity!;
+          ctx.fillRect(0, 0, w, h);
+          drawWave(3);
+          return;
+        }
 
         render(0);
       }

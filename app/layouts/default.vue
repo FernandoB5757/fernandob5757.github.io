@@ -1,11 +1,22 @@
 <template>
     <main>
+        <a href="#main-content"
+            class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-500 focus:text-white focus:px-4 focus:py-2 focus:rounded"
+        >
+            {{ $t('accessibility.skip_to_content') }}
+        </a>
         <div
             class="fixed top-0 left-0 h-[3px] bg-primary-500 z-50 transition-[width] duration-100"
-            :style="{ width: scrollProgress + '%' }"
+            role="progressbar"
+            :aria-valuenow="Math.round(scrollProgress)"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            :aria-label="'Scroll progress'"
         />
         <AppHeader />
-        <slot />
+        <div id="main-content">
+            <slot />
+        </div>
         <ScrollTop />
         <footer>
             <AppFooter />
